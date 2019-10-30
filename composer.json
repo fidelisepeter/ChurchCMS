@@ -11,12 +11,13 @@
         "cyber-duck/laravel-excel": "^1.2",
         "fideloper/proxy": "^4.0",
         "intervention/image": "^2.5",
+        "kylekatarnls/laravel-carbon-2": "^1.0.0",
         "laravel/framework": "5.6.*",
         "laravel/tinker": "^1.0",
         "laravelcollective/html": "^5.4.0",
-        "nexmo/laravel": "^2.0",
+        "maatwebsite/excel": "^3.1",
         "nesbot/carbon": "2.25.0 as 1.25.0",
-        "kylekatarnls/laravel-carbon-2": "^1.0.0"
+        "nexmo/laravel": "^2.0"
     },
     "require-dev": {
         "filp/whoops": "^2.0",

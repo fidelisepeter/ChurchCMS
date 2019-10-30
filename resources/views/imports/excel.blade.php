@@ -7,14 +7,14 @@
                 {{ csrf_field() }}
 
                 <div class="form-group">
-                    {{Form::label('excel_file', 'Select Excel File to Upload')}}
+                    {{Form::label('select_file', 'Select Excel File to Upload')}}
                     {{-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --}}
-                    {{Form::file('excel_file')}}
+                    {{Form::file('select_file')}}
                 </div>
 
                 <div class="form-group">
                     <div class="col-md-6 offset-md-4">
-                        <button type="submit" class="btn btn-primary">
+                        <button type="submit" name="upload" class="btn btn-primary">
                             {{ __('Upload') }}
                         </button>
                     </div>

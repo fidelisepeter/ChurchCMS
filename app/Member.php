@@ -13,6 +13,11 @@ class Member extends Model
     // Timestamps
     public $timestamps = true;
 
+    protected $fillable = [
+        'name', 'email', 'member_type', 'mobile', 'address', 'bday', 'nationality',
+        'gender', 'occupation', 'position', 'department', 'datejoined', 'previouschurch',
+    ];
+
     public function roles() {
         return $this->hasMany('App\Role');
     }

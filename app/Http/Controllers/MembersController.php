@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Member;
 use App\Notifications\MemberAdded;
+use Excel;
+use App\Imports\MembersImport;
 use Validator;
 use Importer;
 
@@ -60,13 +62,13 @@ class MembersController extends Controller
             'email' => 'required|string|email|max:255|unique:users',
             'mobile' => 'required|string|max:10',
             'address' => 'required|string|max:255',
-            'bday' => 'required|date',
+            'bday' => 'date',
             'nationality' => 'required|string|max:255',
             'gender' => 'required|string',
             'occupation' => 'required|string',
             'position' => 'required|string',
             'department' => 'required|string',
-            'datejoined' => 'required|date',
+            'datejoined' => 'date',
             'previouschurch' => 'required|string|max:255',
             'member_image' => 'nullable|image|max:1999'
         ]);
@@ -146,13 +148,13 @@ class MembersController extends Controller
             'email' => 'required|string|email|max:255|unique:users',
             'mobile' => 'required|string|max:10',
             'address' => 'required|string|max:255',
-            'bday' => 'required|date',
+            'bday' => 'date',
             'nationality' => 'required|string|max:255',
             'gender' => 'required|string',
             'occupation' => 'required|string',
             'position' => 'required|string',
             'department' => 'required|string',
-            'datejoined' => 'required|date',
+            'datejoined' => 'date',
             'previouschurch' => 'required|string|max:255',
             'member_image' => 'nullable|image|max:1999'
         ]);
@@ -210,42 +212,48 @@ class MembersController extends Controller
     }
 
     public function importExcel(Request $request) {
-        $validator = Validator::make($request->all(), [
-            'excel_file' => 'required|max:5000|mimes:xlsx,xls,csv'
+        $this->validate($request, [
+            'select_file' => 'required|mimes:xls,xlsx,csv,'
         ]);
-        if($validator->passes()){
+        
+        Excel::import(new MembersImport, request()->file('select_file'));
+        return redirect('/members')->with('success', 'Bulk Members Added');
+        // $validator = Validator::make($request->all(), [
+        //     'excel_file' => 'required|max:5000|mimes:xlsx,xls,csv'
+        // ]);
+        // if($validator->passes()){
 
-            $dataTime = date('Ymd_His');
-            $file = $request->file('excel_file');
-            $fileName = $dataTime. '-' . $file->getClientOriginalName();
-            $savePath = public_path('/upload/');
-            $file->move($savePath, $fileName);
+        //     $dataTime = date('Ymd_His');
+        //     $file = $request->file('excel_file');
+        //     $fileName = $dataTime. '-' . $file->getClientOriginalName();
+        //     $savePath = public_path('/upload/');
+        //     $file->move($savePath, $fileName);
 
-            $excel = Importer::make('Excel');
-            $excel->load($savePath.$fileName);
-            $collection = $excel->getCollection();
+        //     $excel = Importer::make('Excel');
+        //     $excel->load($savePath.$fileName);
+        //     $collection = $excel->getCollection();
 
-            if(sizeof($collection[1]) == 14) {
-                for($row = 1; $row < sizeof($collection); $row++) {
-                    try {
-                        var_dump($collection[$row]);
-                    } catch(\Exception $e) {
-                        return redirect()->back()
-                        ->with(['errors' => $e->getMessage()]);
-                    }
-                }
-            }else {
-                return redirect()->back()
-                ->with(['errors' => [0 => 'Please provide data in file according to sample file.']]);   
-            }
+        //     if(sizeof($collection[1]) == 14) {
+        //         for($row = 1; $row < sizeof($collection); $row++) {
+        //             try {
+        //                 var_dump($collection[$row]);
+        //             } catch(\Exception $e) {
+        //                 return redirect()->back()
+        //                 ->with(['errors' => $e->getMessage()]);
+        //             }
+        //         }
+        //     }else {
+        //         return redirect()->back()
+        //         ->with(['errors' => [0 => 'Please provide data in file according to sample file.']]);   
+        //     }
 
-            // return redirect()->back()
-            // ->with(['success' => 'File Uploaded Successfully']);
+        //     return redirect()->back()
+        //     ->with(['success' => 'File Uploaded Successfully']);
 
-        }else{
-            return redirect()->back()
-            ->with(['errors' => $validator->errors()->all()]);
-        }
+        // }else{
+        //     return redirect()->back()
+        //     ->with(['errors' => $validator->errors()->all()]);
+        // }
     }
 
 }
