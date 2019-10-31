@@ -12,10 +12,27 @@ class ExpenseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $expenses = Expense::all();
-        return view('expense.index')->with('expenses', $expenses);
+        $sortBy = 'expense_type';
+        $orderBy = 'desc';
+        $perPage = 20;
+        $q = null;
+
+        if ($request->has('orderBy'))
+            $orderBy = $request->query('orderBy');
+        if ($request->has('sortBy'))
+            $sortBy = $request->query('sortBy');
+        if ($request->has('perPage'))
+            $perPage = $request->query('perPage');
+        if ($request->has('q'))
+            $q = $request->query('q');
+
+        $expenses = Expense::search($q)->orderBy($sortBy, $orderBy)->paginate($perPage);
+        return view('expense.index', compact('expenses', 'orderBy', 'sortBy', 'q', 'perPage'));
+
+        // $expenses = Expense::all();
+        // return view('expense.index')->with('expenses', $expenses);
     }
 
     /**

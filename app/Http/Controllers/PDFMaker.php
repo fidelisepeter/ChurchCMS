@@ -3,16 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use PDF;
+use Barryvdh\DomPDF\PDF;
 
 class PDFMaker extends Controller
 {
     public function make() {
 
-        $data = ['data' => 'hello'];
-        $pdf = PDF::setOptions(['dpi' => 150, 'defaultFont' => 'sans-serif']);
-        $pdf = PDF::loadView('reports', $data);
-        return $pdf->download('invoice.pdf');
+        $pdf = PDF::make('dompdf.wrapper');
+        $pdf->loadHTML('members.index');
+        return $pdf->stream();
         // Respond with PDF back to browser
         // Send to the file system
     }

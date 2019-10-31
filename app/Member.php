@@ -3,9 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
 
 class Member extends Model
 {
+    use Notifiable;
     // Table Name
     protected $table = 'members';
     // Primary Key
@@ -35,6 +37,10 @@ class Member extends Model
                 ->where('name', 'LIKE', "%{$q}%")
                 ->orWhere('email', 'LIKE', "%{$q}%")
                 ->orWhere('position', 'LIKE', "%{$q}%");
+    }
+
+    public function addedMembers() {
+        return $this->belongsToMany(Member::class, 'members');
     }
 
 }

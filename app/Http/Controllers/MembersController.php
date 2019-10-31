@@ -4,9 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Member;
+use Barryvdh\DomPDF\PDF;
+use App\User;
 use App\Notifications\MemberAdded;
 use Excel;
 use App\Imports\MembersImport;
+use App\Notifications\MembersSMS;
+use Notification;
 use Validator;
 use Importer;
 
@@ -104,6 +108,8 @@ class MembersController extends Controller
         $member->previouschurch = $request->input('previouschurch');
         $member->member_image = $fileNameToStore;
         $member->save();
+        
+        // Notification::send($member->addedMembers()->get(), new MembersSMS($entry));
 
         auth()->user()->notify(new MemberAdded());
 
@@ -218,42 +224,6 @@ class MembersController extends Controller
         
         Excel::import(new MembersImport, request()->file('select_file'));
         return redirect('/members')->with('success', 'Bulk Members Added');
-        // $validator = Validator::make($request->all(), [
-        //     'excel_file' => 'required|max:5000|mimes:xlsx,xls,csv'
-        // ]);
-        // if($validator->passes()){
-
-        //     $dataTime = date('Ymd_His');
-        //     $file = $request->file('excel_file');
-        //     $fileName = $dataTime. '-' . $file->getClientOriginalName();
-        //     $savePath = public_path('/upload/');
-        //     $file->move($savePath, $fileName);
-
-        //     $excel = Importer::make('Excel');
-        //     $excel->load($savePath.$fileName);
-        //     $collection = $excel->getCollection();
-
-        //     if(sizeof($collection[1]) == 14) {
-        //         for($row = 1; $row < sizeof($collection); $row++) {
-        //             try {
-        //                 var_dump($collection[$row]);
-        //             } catch(\Exception $e) {
-        //                 return redirect()->back()
-        //                 ->with(['errors' => $e->getMessage()]);
-        //             }
-        //         }
-        //     }else {
-        //         return redirect()->back()
-        //         ->with(['errors' => [0 => 'Please provide data in file according to sample file.']]);   
-        //     }
-
-        //     return redirect()->back()
-        //     ->with(['success' => 'File Uploaded Successfully']);
-
-        // }else{
-        //     return redirect()->back()
-        //     ->with(['errors' => $validator->errors()->all()]);
-        // }
     }
 
 }

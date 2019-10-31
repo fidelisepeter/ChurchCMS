@@ -23,12 +23,12 @@ Route::get('/notifications', function() {
     return view('notifications');
 });
 
-Route::get('stock/add','StockController@create');
-Route::post('stock','StockController@store');
-Route::get('index','StockController@index');
-Route::get('stock/chart','StockController@chart');
+// Route::get('stock/add','StockController@create');
+// Route::post('stock','StockController@store');
+// Route::get('index','StockController@index');
+// Route::get('stock/chart','StockController@chart');
 
-Route::get('/reports', 'PDFMaker@make');
+Route::get('/pdfmaker', 'PDFMaker@make');
 
 Route::get('/insights', function(){
     return view('insights');
@@ -59,6 +59,8 @@ Route::prefix('admin')->group(function() {
     Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
     Route::get('/', 'AdminController@index')->name('admin.dashboard');
 });
+
+
 
 // Route::get('/admin/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
 // Route::post('/admin/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');

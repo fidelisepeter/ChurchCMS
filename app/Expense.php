@@ -12,4 +12,12 @@ class Expense extends Model
     public $primaryKey = 'id';
     // Timestamps
     public $timestamps = true;
+
+    public function scopeSearch($query, $q)
+    {
+        if ($q == null) return $query;
+        return $query
+                ->where('expense_type', 'LIKE', "%{$q}%")
+                ->orWhere('transaction_type', 'LIKE', "%{$q}%");
+    }
 }

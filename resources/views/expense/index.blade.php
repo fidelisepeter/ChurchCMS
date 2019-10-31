@@ -3,6 +3,42 @@
 @section('content')
     <div class="container">
         <h3>Expense Records</h3>
+        <form action="{{ route('expense.index') }}" class="form-inline">
+            <div class="form-group mr-sm-2">
+                <input class="form-control" type="search" name="q" value="" placeholder="Enter expense type">
+            </div>
+            <div class="form-group mr-sm-2">
+                <select class="form-control" name="sortBy" value="">
+                    @foreach (['expense_type', 'transaction_type'] as $col)
+                        <option @if ($col == $sortBy)
+                            selected
+                        @endif value="{{ $col }}">{{ ucfirst($col) }}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="form-group mr-sm-2">
+                <select class="form-control" name="orderBy" value="">
+                    @foreach (['asc', 'desc'] as $order)
+                        <option @if ($order == $orderBy)
+                            selected
+                        @endif value="{{ $order }}">{{ ucfirst($order) }}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="form-group mr-sm-2">
+                <select name="perPage" class="form-control" value="">
+                    @foreach (['20', '50', '100', '250'] as $page)
+                        <option @if ($page == $perPage)
+                            selected
+                        @endif value="{{ $page }}"></option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="form-group mr-sm-2">
+                <button type="submit" class="btn btn-primary">Filter</button>
+            </div>
+        </form>
+        <hr>
         @if (count($expenses) > 0)
         <table class="table table-striped table-light">
             <thead class="thead-dark">

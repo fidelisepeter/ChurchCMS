@@ -16,15 +16,15 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.3/css/bootstrap-select.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/css/uikit.min.css" />
-    <link rel="stylesheet" href="">
+    
 </head>
-<body>
+<body style="font-family: 'Montserrat', sans-serif;">
     <div id="app">
         <nav class="navbar navbar-expand-lg navbar-light navbar-laravel">
                 <a class="navbar-brand uk-margin-small-right nav-link" uk-toggle="target: #offcanvas-nav" href="{{ url('/') }}">
@@ -85,7 +85,7 @@
                     <br>
                     <li class="uk-nav-divider"></li>
                     <br>
-                    <li><a href="/members"><span class="uk-margin-small-right" uk-icon="icon: users"></span> Church Directory</a></li>
+                    <li><a href="/members"><span class="uk-margin-small-right" uk-icon="icon: users"></span> Members Directory</a></li>
                     <br>
                     {{-- <li><a href="/members"><span class="uk-margin-small-right" uk-icon="icon: users"></span> Church Directory</a></li>
                     <br> --}}

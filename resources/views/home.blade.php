@@ -99,7 +99,7 @@
                 @foreach($sermons as $sermon)
                     <tr>
                         <td>{{$sermon->title}}</td>
-                        <td><a href="/sermons/{{$sermon->id}}/edit" class="btn btn-primary">Edit</a></td>
+                        <td><a href="/sermons/{{$sermon->id}}/edit" class="btn btn-dark">Edit</a></td>
                         <td>
                             {!!Form::open(['action' => ['SermonsController@destroy', $sermon->id], 'method' => 'POST'])!!}
                                 {{Form::hidden('_method', 'DELETE')}}

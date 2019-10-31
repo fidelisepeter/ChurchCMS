@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h3>Member Address Book</h3>
+        <h3>Members Directory</h3>
             <form action="{{ route('members.index') }}" class="form-inline">
                 <div class="form-group mr-sm-2">
                     <input class="form-control" type="search" name="q" value="" placeholder="Enter name, position or email">
