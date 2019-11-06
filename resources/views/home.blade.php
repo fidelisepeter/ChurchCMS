@@ -1,6 +1,9 @@
 @extends('layouts.homeapp')
 
 @section('content')
+<div class="container-fluid text-center bg-dark" style="margin-bottom: -17px;">
+    <h2 style="color: white; padding: 10px;">Attendance</h2>
+</div>
 <div class="card-header card-header-lg">
     <canvas id="bigDashboardChart"></canvas>
 </div>
