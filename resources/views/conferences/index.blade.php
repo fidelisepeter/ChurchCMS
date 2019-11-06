@@ -5,27 +5,26 @@
         <h2>Events &amp; Conferences</h2>
             @if (count($conferences) > 0)
                 @foreach ($conferences as $conference)
-                    <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin uk-card-small" uk-grid>
-                        <div class="uk-card-media-left uk-cover-container">
-                        <img src="/storage/eventcover_images/{{ $conference->cover_image }}" alt="" uk-cover>
-                            <canvas width="600" height="400"></canvas>
-                        </div>
-                        <div>
-                            <div class="uk-card-body">
-                                <h3 class="uk-card-title">{{ $conference->name }}</h3>
-                                <p>{{ $conference->description }}</p>
-                                <p>Scheduled to come off on : {{ $conference->date_of_conference }}</p>
+                    <div class="card mb-3 mr-3" style="max-width: 500px; float: left;">
+                        <div class="row no-gutters">
+                            <div class="col-md-4">
+                                <img src="/storage/eventcover_images/{{ $conference->cover_image }}" class="card-img" alt="...">
                             </div>
-                            <div class="uk-card-footer">
-                                <p>Begins at : {{ $conference->start_time }}</p>
-                                <p>Ends at : {{ $conference->close_time }}</p>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ $conference->name }}</h5>
+                                    <p class="card-text">{{ $conference->description }}</p>
+                                    <p class="lead">Scheduled for: {{ $conference->date_of_conference }}</p>
+                                    <p class="card-text"><small class="text-muted">Begins at : {{ $conference->start_time }}</small></p>
+                                    <p class="card-text"><small class="text-muted">Ends at : {{ $conference->close_time }}</small></p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <br>
                 @endforeach
             @else
                 <p>No conferences have been announced yet!</p>
             @endif
     </div>
 @endsection
+    

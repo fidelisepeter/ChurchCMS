@@ -1,7 +1,11 @@
 @extends('layouts.homeapp')
 
 @section('content')
-<div class="container">
+<div class="card-header card-header-lg">
+    <canvas id="bigDashboardChart"></canvas>
+</div>
+<hr>
+<div class="container text-center">
     <a href="/members/create" class="btn btn-dark">Add Member</a>
     <a href="/sermons/create" class="btn btn-primary">Add Note</a>
     {{-- <a href="/roles/create" class="btn btn-secondary">Add Position</a> --}}
@@ -116,3 +120,12 @@
     </div>
 </div>
 @endsection
+@push('js')
+  <script>
+    $(document).ready(function() {
+      // Javascript method's body can be found in assets/js/demos.js
+      demo.initDashboardPageCharts();
+
+    });
+  </script>
+@endpush

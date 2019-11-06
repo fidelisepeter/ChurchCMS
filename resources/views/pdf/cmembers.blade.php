@@ -1,1 +1,1 @@
-<h1>{{ $data }}</h1>
+<h1>I love this game</h1>

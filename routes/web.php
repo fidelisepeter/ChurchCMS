@@ -28,7 +28,10 @@ Route::get('/notifications', function() {
 // Route::get('index','StockController@index');
 // Route::get('stock/chart','StockController@chart');
 
-Route::get('/pdfmaker', 'PDFMaker@make');
+Route::get('/pdfmaker1', 'PDFMaker@make1');
+Route::get('/pdfmaker2', 'PDFMaker@make2');
+Route::get('/pdfmaker3', 'PDFMaker@make3');
+Route::get('/pdfmaker4', 'PDFMaker@make4');
 
 Route::get('/insights', function(){
     return view('insights');

@@ -3,16 +3,40 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Barryvdh\DomPDF\PDF;
+use PDF;
+
 
 class PDFMaker extends Controller
 {
-    public function make() {
+    public function make1() {
+        $data = [
+			'foo' => 'bar'
+		];
+		$pdf = PDF::loadView('pdf.cmembers', $data);
+		return $pdf->stream('cmembers.pdf');
+    }
 
-        $pdf = PDF::make('dompdf.wrapper');
-        $pdf->loadHTML('members.index');
-        return $pdf->stream();
-        // Respond with PDF back to browser
-        // Send to the file system
+    public function make2() {
+        $data = [
+			'foo' => 'bar'
+		];
+		$pdf = PDF::loadView('pdf.cmembers', $data);
+		return $pdf->stream('cmembers.pdf');
+    }
+
+    public function make3() {
+        $data = [
+			'foo' => 'bar'
+		];
+		$pdf = PDF::loadView('pdf.cmembers', $data);
+		return $pdf->stream('cmembers.pdf');
+    }
+
+    public function make4() {
+        $data = [
+			'foo' => 'bar'
+		];
+		$pdf = PDF::loadView('pdf.cmembers', $data);
+		return $pdf->stream('cmembers.pdf');
     }
 }
