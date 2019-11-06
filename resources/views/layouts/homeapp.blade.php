@@ -28,7 +28,7 @@
 </head>
 <body style="font-family: 'Montserrat', sans-serif;">
     <div id="app">
-        <nav class="navbar navbar-expand-lg navbar-light navbar-laravel fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-light navbar-laravel">
             <a class="navbar-brand uk-margin-small-right nav-link" uk-toggle="target: #offcanvas-nav" href="{{ url('/') }}">
                 <span class="uk-margin-small-right" uk-icon="icon: table"></span>
                 {{ config('app.name', 'ChurchAdmin') }}

@@ -22,11 +22,11 @@
         <h3>Recently Added Members</h3>
         <div class="row">
             @foreach (auth()->user()->unreadNotifications as $notification)
-                <div class="card bg-light m-3">
+                <div class="card bg-light m-2">
                     <div class="card-body">
                         <h5 class="card-title">{{ snake_case(class_basename($notification->type)) }}</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        <a href="#" class="btn btn-secondary">Button</a>
+                        <p class="card-text">Say Hello to our newest member. Show him some love</p>
+                        <a href="#" class="btn btn-secondary">Clear</a>
                     </div>
                 </div>
             @endforeach

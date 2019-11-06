@@ -27,7 +27,7 @@ class Member extends Model
         return $this->hasMany('App\Income');
     }
     public function departments() {
-        return $this->belongsTo('App\Department');
+        return $this->belongsToMany('App\Department');
     }
 
     public function scopeSearch($query, $q)

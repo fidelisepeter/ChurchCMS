@@ -14,6 +14,6 @@ class Department extends Model
     public $timestamps = true;
 
     public function members() {
-        return $this->hasMany('App\Members');
+        return $this->belongsToMany('App\Members');
     }
 }
