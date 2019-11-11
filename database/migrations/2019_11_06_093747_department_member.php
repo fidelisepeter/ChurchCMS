@@ -13,7 +13,12 @@ class DepartmentMember extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('department_member', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('department_id');
+            $table->integer('member_id');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +28,6 @@ class DepartmentMember extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('department_member');
     }
 }

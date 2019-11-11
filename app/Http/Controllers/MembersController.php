@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Member;
+use App\Department;
 use Barryvdh\DomPDF\PDF;
 use App\User;
 use App\Notifications\MemberAdded;

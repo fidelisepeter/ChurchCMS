@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Department;
+use App\Member;
 
 class DepartmentsController extends Controller
 {
@@ -58,7 +59,8 @@ class DepartmentsController extends Controller
      */
     public function show($id)
     {
-        //
+        $department = Department::find($id);
+        return view('departments.show')->with('department', $department);
     }
 
     /**
