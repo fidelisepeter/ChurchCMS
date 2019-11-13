@@ -33,6 +33,11 @@ Route::get('/pdfmaker2', 'PDFMaker@make2');
 Route::get('/pdfmaker3', 'PDFMaker@make3');
 Route::get('/pdfmaker4', 'PDFMaker@make4');
 
+Route::get('/member/print-pdf', ['as' => 'members.printpdf', 'uses' =>'PrintController@printPDF']);
+
+Route::get('cmembers', 'PrintController@index');
+Route::get('prnpreview', 'PrintController@prnpreview');
+
 Route::get('/insights', function(){
     return view('insights');
 });
@@ -51,6 +56,7 @@ Route::resource('addressbook', 'AddressesController');
 Route::resource('members', 'MembersController');
 Route::resource('expense', 'ExpenseController');
 Route::resource('income', 'IncomeController');
+Route::resource('attendance', 'AttendanceController');
 Route::resource('departments', 'DepartmentsController');
 
 Auth::routes();

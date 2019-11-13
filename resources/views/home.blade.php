@@ -10,13 +10,10 @@
 <hr>
 <div class="container text-center">
     <a href="/members/create" class="btn btn-dark">Add Member</a>
-    <a href="/sermons/create" class="btn btn-primary">Add Note</a>
-    {{-- <a href="/roles/create" class="btn btn-secondary">Add Position</a> --}}
-    <a href="/departments/create" class="btn btn-success">Add Department</a>
-    <a href="/conferences/create" class="btn btn-secondary">Add Event</a>
-    <a href="/services/create" class="btn btn-danger">Add Service</a>
+    <a href="/sermons/create" class="btn btn-success">Add Note</a>
     <a href="/income/create" class="btn btn-warning">Add Income</a>
-    <a href="/expense/create" class="btn" style="background: greenyellow;">Add Expense</a>
+    <a href="/expense/create" class="btn btn-info">Add Expense</a>
+    <a href="/conferences/create" class="btn btn-secondary">Add Event</a>
     <hr>
     <div class="row">
         <div class="col-md-6">

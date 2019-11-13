@@ -52,7 +52,7 @@
             </thead>   
             @foreach($expenses as $expense)
                 <tr>
-                    <td>{{$expense->type}}</td>
+                    <td>{{ $expense->expense_type }}</td>
                     <td>{{ $expense->amount }}</td>
                     <td>{{ $expense->transaction_type }}</td>
                     <td>{{ $expense->date_received }}</td>

@@ -53,7 +53,7 @@
             @foreach($incomes as $income)
                 <tr>
                     <td>{{ $income->paid_by }}</td>
-                    <td>{{ $income->type }}</td>
+                    <td>{{ $income->income_type }}</td>
                     <td>{{ $income->amount }}</td>
                     <td>{{ $income->transaction_type }}</td>
                     <td>{{ $income->date_received }}</td>

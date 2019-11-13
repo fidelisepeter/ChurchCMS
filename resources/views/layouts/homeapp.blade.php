@@ -13,6 +13,7 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js" charset="utf-8"></script>
+    <script src="{{ asset('js/jquery.printPage.js') }}"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
@@ -94,28 +95,29 @@
                     <br>
                     <li><a href="/sermons"><span class="uk-margin-small-right" uk-icon="icon: bookmark"></span> Bible Notes</a></li>
                     
-                    <li><a href="/services"><span class="uk-margin-small-right" uk-icon="icon: tag"></span> Church Services</a></li>
+                    {{-- <li><a href="/services"><span class="uk-margin-small-right" uk-icon="icon: tag"></span> Church Services</a></li> --}}
                     <li><a href="/conferences"><span class="uk-margin-small-right" uk-icon="icon: calendar"></span> Events &amp; Conferences</a></li>
-                    <li><a href="/roles"><span class="uk-margin-small-right" uk-icon="icon: user"></span> Roles</a></li>
+                    {{-- <li><a href="/roles"><span class="uk-margin-small-right" uk-icon="icon: user"></span> Roles</a></li> --}}
                     <li><a href="/departments"><span class="uk-margin-small-right" uk-icon="icon: copy"></span> Departments</a></li>
                     <br>
                     <li class="uk-nav-divider"></li>
                     <br>
+                    <li><a href="/expense"><span class="uk-margin-small-right" uk-icon="icon: push"></span> Expenses</a></li>
+                    <li><a href="/income"><span class="uk-margin-small-right" uk-icon="icon: pull"></span> Income</a></li>
+                    
+                    <br>
+                    <li class="uk-nav-divider"></li>
+                    <br>
                     {{-- <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: album"></span> Finance</a></li> --}}
-                    <li class="uk-parent">
+                    {{-- <li class="uk-parent">
                         <a href="#"><span class="uk-margin-small-right" uk-icon="icon: album"></span> Finance</a>
                         <ul class="uk-nav-sub">
                             <li><a href="/expense"><span class="uk-margin-small-right" uk-icon="icon: push"></span> Expenses</a></li>
                             <li><a href="/income"><span class="uk-margin-small-right" uk-icon="icon: pull"></span> Income</a></li>
-                            {{-- <li><a href="/services/create">Create Service</a></li>
-                            <li><a href="/conferences/create">Create Event</a></li>
-                            <li><a href="/rotas/create">Create Duty Rota</a></li> --}}
+                            
                         </ul>
-                    </li>
-                    <br>
-                    <li class="uk-nav-divider"></li>
-                    <br>
-                    <li><a href="/insights"><span class="uk-margin-small-right" uk-icon="icon: print"></span> Reports &amp; Insights</a></li>
+                    </li> --}}
+                    <li><a href="/attendance"><span class="uk-margin-small-right" uk-icon="icon: print"></span>  Attendance Insights</a></li>
                     <br>
                 </ul>
         
@@ -131,46 +133,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit-icons.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
-    <script
-        src="https://code.jquery.com/jquery-3.4.1.js"
-        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-        crossorigin="anonymous">
-    </script>
-    {{-- <script>
-            $(document).ready(function(){
-                $('#search_text').keyup(function(){
-                    var txt = $(this).val();
-                    if(txt != '')
-                    {
-                        $.ajax({
-                            url:"fetch.php",
-                            method:"post",
-                            data:{search:txt},
-                            dataType:"text",
-                            success:function(data)
-                            {
-                                $('#result').html(data);
-                            }
-                        });
-                    }
-                    else
-                    {
-                        $('#result').html('');
-                        $.ajax({
-                            url:"fetch.php",
-                            method:"post",
-                            data:{search:txt},
-                            dataType:"text",
-                            success:function(data)
-                            {
-                                $('#result').html(data);
-                            }
-                        });
-                    }
-                });
-            });
-        </script> --}}
-
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src="{{ asset('assets') }}/js/core/jquery.min.js"></script>
     <script src="{{ asset('assets') }}/js/core/popper.min.js"></script>
    
