@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Charts\AttendanceChart;
 use App\User;
 use App\Member;
 use App\Conference;
 use App\Expense;
-use App\Income;
+use App\Attendance;
 
 class HomeController extends Controller
 {
@@ -35,9 +37,18 @@ class HomeController extends Controller
         $user_id = auth()->user()->id;
         $user = User::find($user_id);
 
+        $attendances = Attendance::all();
+        $data = DB::table('attendances')->pluck('total');
+        $data2 = DB::table('attendances')->pluck('id');
+        
+        $chart = new AttendanceChart;
+        $chart->labels($data2);
+        $chart->dataset('Attendance Data', 'line', $data);
         return view('home')->with('sermons', $user->sermons)
                            ->with('members', $members)
                            ->with('conferences', $conferences)
-                           ->with('expenses', $expenses);
+                           ->with('expenses', $expenses)
+                           ->with('attendances', $attendances)
+                           ->with('chart', $chart);
     }
 }

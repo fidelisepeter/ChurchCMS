@@ -1,20 +1,20 @@
 @extends('layouts.homeapp')
 
 @section('content')
-<div class="container-fluid text-center bg-dark" style="margin-bottom: -17px;">
-    <h2 style="color: white; padding: 10px;">Attendance</h2>
-</div>
-<div class="card-header card-header-lg">
-    <canvas id="bigDashboardChart"></canvas>
-</div>
-<hr>
 <div class="container text-center">
     <a href="/members/create" class="btn btn-dark">Add Member</a>
     <a href="/sermons/create" class="btn btn-success">Add Note</a>
     <a href="/income/create" class="btn btn-warning">Add Income</a>
     <a href="/expense/create" class="btn btn-info">Add Expense</a>
     <a href="/conferences/create" class="btn btn-secondary">Add Event</a>
-    <hr>
+    <a href="/attendance/create" class="btn btn-primary">Add Attendance</a>
+</div>
+<div>
+    {!! $chart->container() !!}
+</div>
+<hr>
+<div class="container text-center">
+    
     <div class="row">
         <div class="col-md-6">
             <h3 class="text-center">Upcoming Events</h3>
@@ -119,13 +119,5 @@
         </div>
     </div>
 </div>
+{!! $chart->script() !!}
 @endsection
-@push('js')
-  <script>
-    $(document).ready(function() {
-      // Javascript method's body can be found in assets/js/demos.js
-      demo.initDashboardPageCharts();
-
-    });
-  </script>
-@endpush

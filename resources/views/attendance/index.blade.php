@@ -2,15 +2,14 @@
 
 @section('content')
     <div class="container-fluid text-center bg-dark" style="margin-bottom: -17px;">
-        <h2 style="color: white; padding: 10px;">Attendance Data</h2>
+        <h2 style="color: white; padding: 10px;">Attendance Insights</h2>
     </div>
-    <div class="card-header card-header-lg">
+    <div>
+        {!! $chart->container() !!}
+    </div>
+    {{-- <div class="card-header card-header-lg">
         <canvas id="bigDashboardChart"></canvas>
-    </div>
-    <hr>
-    <div class="text-center">
-        <a href="/attendance/create" class="btn btn-secondary">Add Attendance</a>
-    </div>
+    </div> --}}
     <hr>
     <div class="container">
         @if (count($attendances) > 0)
@@ -49,12 +48,6 @@
             <p>You have not recorded any attendance yet</p>
         @endif
     </div>
+    
+    {!! $chart->script() !!}
 @endsection
-@push('js')
-  <script>
-    $(document).ready(function() {
-      // Javascript method's body can be found in assets/js/demos.js
-      demo.initDashboardPageCharts();
-    });
-  </script>
-@endpush

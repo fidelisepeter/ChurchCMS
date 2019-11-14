@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Attendance;
+use App\Charts\AttendanceChart;
 
 class AttendanceController extends Controller
 {
@@ -15,8 +17,16 @@ class AttendanceController extends Controller
     public function index()
     {
         $attendances = Attendance::all();
-        return view('attendance.index')->with('attendances', $attendances);
+        $data = DB::table('attendances')->pluck('total');
+        $data2 = DB::table('attendances')->pluck('id');
+        
+        $chart = new AttendanceChart;
+        $chart->labels($data2);
+        $chart->dataset('Attendance Data', 'line', $data);
+        return view('attendance.index')->with('attendances', $attendances)
+                                        ->with('chart', $chart);
     }
+    
 
     /**
      * Show the form for creating a new resource.
