@@ -1,13 +1,16 @@
-clone this repository
+# Church Administration
+This is a minimal content management system for churches to curate information about their members, sermons preached, upcoming events and keep track of attendance, income and expenses to produce insights for the management of the church.
 
-cd into the repository
+### First, clone this repository
 
-install all dependencies by typing "composer install" in your terminal
+### cd into the repository
 
-duplicate the .env.example file, rename it ".env" and make the required database changes.
+### Install all dependencies by typing "composer install" in your terminal
 
-generate a new application key by typing "php artisan key:generate"
+### Duplicate the .env.example file, rename it ".env" and make the required database changes.
 
-run the database migrations by typing "php artisan migrate" in the terminal
+### Generate a new application key by typing "php artisan key:generate"
 
-now start your local deployment server by typing "php artisan serve" in the terminal
+### Run the database migrations by typing "php artisan migrate" in the terminal
+
+### Now start your local deployment server by typing "php artisan serve" in the terminal
