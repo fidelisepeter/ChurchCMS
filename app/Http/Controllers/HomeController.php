@@ -56,8 +56,8 @@ class HomeController extends Controller
         $chart2 = new IncomeChart;
         $chart2->labels($data4);
         $chart2->dataset('Income Data', 'bar', $data3)->options([
-            'color' => '#8ee3e6',
-            'backgroundColor' => '#8ee3e6',
+            'color' => '#1f9fa3',
+            'backgroundColor' => '#1f9fa3',
         ]);;
 
         return view('home')->with('sermons', $user->sermons)
