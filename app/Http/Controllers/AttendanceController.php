@@ -17,14 +17,29 @@ class AttendanceController extends Controller
     public function index()
     {
         $attendances = Attendance::all();
-        $data = DB::table('attendances')->pluck('total');
+        $data = DB::table('attendances')->pluck('number_of_first_timers');
         $data2 = DB::table('attendances')->pluck('id');
+
+        $data3 = DB::table('attendances')->pluck('number_of_new_converts');
+        $data4 = DB::table('attendances')->pluck('id');
         
         $chart = new AttendanceChart;
         $chart->labels($data2);
-        $chart->dataset('Attendance Data', 'line', $data);
+        $chart->dataset('Number of First Timers', 'line', $data)->options([
+            'color' => '#825ba8',
+            'backgroundColor' => '#825ba8',
+        ]);
+
+        $chart2 = new AttendanceChart;
+        $chart2->labels($data4);
+        $chart2->dataset('Number of New Converts', 'bar', $data3)->options([
+            'color' => '#2b7326',
+            'backgroundColor' => '#2b7326',
+        ]);
+
         return view('attendance.index')->with('attendances', $attendances)
-                                        ->with('chart', $chart);
+                                        ->with('chart', $chart)
+                                        ->with('chart2', $chart2);
     }
     
 

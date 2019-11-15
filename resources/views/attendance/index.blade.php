@@ -4,8 +4,13 @@
     <div class="container-fluid text-center bg-dark" style="margin-bottom: -17px;">
         <h2 style="color: white; padding: 10px;">Attendance Insights</h2>
     </div>
-    <div>
-        {!! $chart->container() !!}
+    <div class="row">
+        <div class="col-md-6">
+            {!! $chart->container() !!}
+        </div>
+        <div class="col-md-6">
+            {!! $chart2->container() !!}
+        </div>
     </div>
     {{-- <div class="card-header card-header-lg">
         <canvas id="bigDashboardChart"></canvas>
@@ -50,4 +55,5 @@
     </div>
     
     {!! $chart->script() !!}
+    {!! $chart2->script() !!}
 @endsection
