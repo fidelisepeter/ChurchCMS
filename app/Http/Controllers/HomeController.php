@@ -41,7 +41,7 @@ class HomeController extends Controller
 
         $attendances = Attendance::all();
         $data = DB::table('attendances')->pluck('total');
-        $data2 = DB::table('attendances')->pluck('id');
+        $data2 = DB::table('attendances')->pluck('date_of_service');
         
         $chart = new AttendanceChart;
         $chart->labels($data2);

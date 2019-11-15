@@ -29,6 +29,7 @@
                             <p>Mobile: {{ $member->mobile }}</p>
                             <p>Date of Birth: {{ $member->bday }}</p>
                             <p>Date Joined: {{ $member->datejoined }}</p>
+                            <p>Previous Church: {{ $member->previouschurch}}</p>
                         </div>
                         <div class="col-md-4">
                             <p>Occupation: {{ $member->occupation }}</p>

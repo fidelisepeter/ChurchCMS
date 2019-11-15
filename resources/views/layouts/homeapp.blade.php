@@ -7,6 +7,8 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}" />
+
     <title>{{ config('app.name', 'ChurchAdmin') }}</title>
 
     <!-- Scripts -->
@@ -29,6 +31,7 @@
         <nav class="navbar navbar-expand-lg navbar-light navbar-laravel">
             <a class="navbar-brand uk-margin-small-right nav-link" uk-toggle="target: #offcanvas-nav" href="{{ url('/') }}">
                 <span class="uk-margin-small-right" uk-icon="icon: table"></span>
+                <img src="{{ asset('images/favicon.ico') }}" />
                 {{ config('app.name', 'ChurchAdmin') }}
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
