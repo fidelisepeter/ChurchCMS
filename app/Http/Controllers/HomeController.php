@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Charts\AttendanceChart;
-use App\Charts\IncomeChart;
-use App\Income;
 use App\User;
 use App\Member;
 use App\Conference;
@@ -50,22 +48,11 @@ class HomeController extends Controller
             'backgroundColor' => '#383834',
         ]);;
 
-        $data3 = DB::table('incomes')->pluck('amount');
-        $data4 = DB::table('incomes')->pluck('paid_by');
-
-        $chart2 = new IncomeChart;
-        $chart2->labels($data4);
-        $chart2->dataset('Income Data', 'bar', $data3)->options([
-            'color' => '#1f9fa3',
-            'backgroundColor' => '#1f9fa3',
-        ]);;
-
         return view('home')->with('sermons', $user->sermons)
                            ->with('members', $members)
                            ->with('conferences', $conferences)
                            ->with('expenses', $expenses)
                            ->with('attendances', $attendances)
-                           ->with('chart', $chart)
-                           ->with('chart2', $chart2);
+                           ->with('chart', $chart);
     }
 }

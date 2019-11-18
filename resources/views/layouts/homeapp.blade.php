@@ -94,7 +94,7 @@
                     <li class="uk-nav-divider"></li>
                     <br>
                     <li><a href="/expense"><span class="uk-margin-small-right" uk-icon="icon: push"></span> Expenses</a></li>
-                    <li><a href="/income"><span class="uk-margin-small-right" uk-icon="icon: pull"></span> Income</a></li>
+                    <li><a href="/income"><span class="uk-margin-small-right" uk-icon="icon: pull"></span> Incomes</a></li>
                     <br>
                     <li class="uk-nav-divider"></li>
                     <br>
@@ -107,6 +107,10 @@
                         </ul>
                     </li> --}}
                     <li><a href="/attendance"><span class="uk-margin-small-right" uk-icon="icon: gitter"></span>  Attendance Insights</a></li>
+                    <br>
+                    <li class="uk-nav-divider"></li>
+                    <br>
+                    <li><a href="/reports"><span class="uk-margin-small-right" uk-icon="icon: file-pdf"></span>  Reports</a></li>
                     <br>
                 </ul>
             </div>

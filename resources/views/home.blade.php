@@ -9,14 +9,12 @@
     <a href="/conferences/create" class="btn btn-secondary">Add Event</a>
     <a href="/attendance/create" class="btn btn-primary">Add Attendance</a>
 </div>
-<div class="row">
-    <div class="col-md-6">
-        {!! $chart->container() !!}
-    </div>
-    <div class="col-md-6">
-        {!! $chart2->container() !!}
-    </div>
+<div class="container-fluid">
+    {!! $chart->container() !!}
 </div>
+    {{-- <div class="col-md-6">
+        {!! $chart2->container() !!}
+    </div> --}}
 <hr>
 <div class="container text-center">
     
@@ -125,5 +123,4 @@
     </div>
 </div>
 {!! $chart->script() !!}
-{!! $chart2->script() !!}
 @endsection

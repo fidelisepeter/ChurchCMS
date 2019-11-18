@@ -18,10 +18,10 @@ class AttendanceController extends Controller
     {
         $attendances = Attendance::all();
         $data = DB::table('attendances')->pluck('number_of_first_timers');
-        $data2 = DB::table('attendances')->pluck('id');
+        $data2 = DB::table('attendances')->pluck('date_of_service');
 
         $data3 = DB::table('attendances')->pluck('number_of_new_converts');
-        $data4 = DB::table('attendances')->pluck('id');
+        $data4 = DB::table('attendances')->pluck('date_of_service');
         
         $chart = new AttendanceChart;
         $chart->labels($data2);

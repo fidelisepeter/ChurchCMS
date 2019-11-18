@@ -11,9 +11,6 @@
 |
 */
 
-use App\Notifications\TestingNotification;
-use App\User;
-
 Route::get('/', function () {
     // User::find(1)->notify(new TestingNotification);
     return view('welcome');
@@ -23,24 +20,15 @@ Route::get('/notifications', function() {
     return view('notifications');
 });
 
-// Route::get('stock/add','StockController@create');
-// Route::post('stock','StockController@store');
-// Route::get('index','StockController@index');
-// Route::get('stock/chart','StockController@chart');
-
-Route::get('/pdfmaker1', 'PDFMaker@make1');
-Route::get('/pdfmaker2', 'PDFMaker@make2');
-Route::get('/pdfmaker3', 'PDFMaker@make3');
-Route::get('/pdfmaker4', 'PDFMaker@make4');
-
-Route::get('/member/print-pdf', ['as' => 'members.printpdf', 'uses' =>'PrintController@printPDF']);
-
-Route::get('cmembers', 'PrintController@index');
-Route::get('prnpreview', 'PrintController@prnpreview');
-
-Route::get('/insights', function(){
-    return view('insights');
+Route::get('/reports', function(){
+    return view('reports');
 });
+Route::get('/reportmembers', 'ReportController@members');
+Route::get('/reportattendance', 'ReportController@attendance');
+Route::get('/reportincome', 'ReportController@income');
+Route::get('/reportmembers/pdf','ReportController@export_pdfmembers');
+Route::get('/reportincome/pdf','ReportController@export_pdfincome');
+Route::get('/reportattendance/pdf','ReportController@export_pdfattendance');
 
 Route::get('profile', 'UserController@profile');
 Route::post('profile', 'UserController@update_avatar');

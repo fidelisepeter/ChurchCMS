@@ -4,7 +4,7 @@
     <div class="container-fluid text-center bg-dark" style="margin-bottom: -17px;">
         <h2 style="color: white; padding: 10px;">Attendance Insights</h2>
     </div>
-    <div class="row">
+    <div class="container-fluid row">
         <div class="col-md-6">
             {!! $chart->container() !!}
         </div>
