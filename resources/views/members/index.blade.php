@@ -5,11 +5,11 @@
         <h3>Members Directory</h3>
         <form action="{{ route('members.index') }}" class="form-inline">
             <div class="form-group mr-sm-2">
-                <input class="form-control" type="search" name="q" value="" placeholder="Enter name, position or email">
+                <input class="form-control" type="search" name="q" value="" placeholder="Enter name, position or department">
             </div>
             <div class="form-group mr-sm-2">
                 <select class="form-control" name="sortBy" value="">
-                    @foreach (['name', 'email', 'position'] as $col)
+                    @foreach (['name', 'department', 'position'] as $col)
                         <option @if ($col == $sortBy)
                             selected
                         @endif value="{{ $col }}">{{ ucfirst($col) }}</option>
@@ -27,7 +27,7 @@
             </div>
             <div class="form-group mr-sm-2">
                 <select name="perPage" class="form-control" value="">
-                    @foreach (['20', '50', '100', '250'] as $page)
+                    @foreach (['25', '50', '100', '250'] as $page)
                         <option @if ($page == $perPage)
                             selected
                         @endif value="{{ $page }}"></option>

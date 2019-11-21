@@ -38,7 +38,7 @@
             </div>
             <div class="form-group">
                 {{Form::label('position', 'Position')}}
-                {{Form::select('position', array('Founder' => 'Founder', 'Pastor' => 'Pastor', 'Administrator' => 'Administrator', 'Elder' => 'Elder', 'Deacon' => 'Deacon'), ['class' => 'form-control'])}}
+                {{Form::select('position', array('Founder' => 'Founder', 'Pastor' => 'Pastor', 'Administrator' => 'Administrator', 'Elder' => 'Elder', 'Deacon' => 'Deacon', 'Member' => 'Member'), ['class' => 'form-control'])}}
             </div>
             <div class="form-group">
                 {{Form::label('department', 'Department')}}

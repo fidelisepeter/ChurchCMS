@@ -20,7 +20,7 @@
                     </div>
                 </div>
 
-                <a href="{{ url('/sample/addmember.xlsx') }}">Download Sample Excel File</a>
+                <a href="{{ url('/sample/massuploadmembers2.xlsx') }}">Download Sample Excel File</a>
             </form>
         </div>
     </div>

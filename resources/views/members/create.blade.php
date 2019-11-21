@@ -29,7 +29,7 @@
                 <div class="card">
                     <div class="card-header">
                         {{ __('Add Member To Church') }}
-                        <a href="/import1" class="btn btn-secondary float-right">
+                        <a href="/importmembers" class="btn btn-secondary float-right">
                             {{ __('Add Members via Excel File')}}
                         </a>
                     </div>
@@ -169,6 +169,7 @@
                                         <option value="Administrator">Administrator</option>
                                         <option value="Elder">Elder</option>
                                         <option value="Deacon">Deacon</option>
+                                        <option value="Deacon">Member</option>
                                     </select>
                                     @if ($errors->has('position'))
                                         <span class="invalid-feedback" role="alert">

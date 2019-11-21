@@ -35,7 +35,7 @@ class Member extends Model
         if ($q == null) return $query;
         return $query
                 ->where('name', 'LIKE', "%{$q}%")
-                ->orWhere('email', 'LIKE', "%{$q}%")
+                ->orWhere('department', 'LIKE', "%{$q}%")
                 ->orWhere('position', 'LIKE', "%{$q}%");
     }
 

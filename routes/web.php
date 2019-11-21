@@ -33,7 +33,7 @@ Route::get('/reportattendance/pdf','ReportController@export_pdfattendance');
 Route::get('profile', 'UserController@profile');
 Route::post('profile', 'UserController@update_avatar');
 
-Route::get('import1', 'MembersController@importFile');
+Route::get('importmembers', 'MembersController@importFile');
 Route::post('import', 'MembersController@importExcel');
 
 Route::resource('sermons', 'SermonsController');

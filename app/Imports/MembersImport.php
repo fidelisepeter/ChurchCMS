@@ -20,15 +20,16 @@ class MembersImport implements ToModel
             'email' => $row[1],
             'mobile' => $row[2],
             'address' => $row[3],
-            'bday' => Carbon::createFromFormat('m-d-Y', $row[4]),
+            'bday' => Carbon::parse('2000-10-10'),
             'nationality' => $row[5],
             'gender' => $row[6],
             'occupation' => $row[7],
             'position' => $row[8],
             'department' => $row[9],
-            'datejoined' => $row[10],
-            'previouschurch' => $row[11],
-            'member_type' => $row[12],
+            'datejoined' => Carbon::now(),
+            'previouschurch' => $row[10],
+            'member_type' => $row[11],
+            'member_image' => $row[12],
         ]);
     }
 }
