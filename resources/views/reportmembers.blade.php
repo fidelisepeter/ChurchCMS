@@ -1,7 +1,7 @@
 @extends('layouts.homeapp')
 
 @section('content')
-<div class="container">
+<div class="container text-center">
     <a href="/reportmembers/pdf" class="btn btn-success">Print PDF</a>
 </div>
 <div class="container">

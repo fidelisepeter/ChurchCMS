@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Attendance;
 use App\Member;
 use App\Income;
-use Barryvdh\DomPDF\Facade as PDF;
+use PDF;
 
 class ReportController extends Controller
 {
@@ -14,24 +14,22 @@ class ReportController extends Controller
         $incomes = Income::all();
         return view('reportincome')->with('incomes', $incomes);
     }
-
     public function members() {
         $members = Member::all();
         return view('reportmembers')->with('members', $members);
     }
-
     public function attendance() {
         $attendances = Attendance::all();
         return view('reportattendance')->with('attendances', $attendances);
     }
-
     public function export_pdfmembers() {
         $members = Member::all();
-        $pdf = PDF::loadView('reportmembers', $members);
+        $pdf = PDF::make('members');
+        $pdf->loadView('reportmembers', $members);
         return $pdf->download('members.pdf');
     }
     public function export_pdfincome() {
-        $incomes = Income::all();
+        $incomes = Income::get();
         $pdf = PDF::loadView('reportincome', $incomes);
         return $pdf->download('income.pdf');
     }

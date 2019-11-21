@@ -2,6 +2,7 @@
 
 namespace App\Imports;
 
+use Carbon\Carbon;
 use App\Member;
 use Maatwebsite\Excel\Concerns\ToModel;
 
@@ -19,7 +20,7 @@ class MembersImport implements ToModel
             'email' => $row[1],
             'mobile' => $row[2],
             'address' => $row[3],
-            'bday' => $row[4],
+            'bday' => Carbon::createFromFormat('m-d-Y', $row[4]),
             'nationality' => $row[5],
             'gender' => $row[6],
             'occupation' => $row[7],
