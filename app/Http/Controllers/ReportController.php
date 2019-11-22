@@ -29,7 +29,7 @@ class ReportController extends Controller
         return $pdf->download('members.pdf');
     }
     public function export_pdfincome() {
-        $incomes = Income::get();
+        $incomes = Income::all();
         $pdf = PDF::loadView('reportincome', $incomes);
         return $pdf->download('income.pdf');
     }

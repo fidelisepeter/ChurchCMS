@@ -2,7 +2,8 @@
 
 @section('content')
 <div class="container text-center">
-    <a href="/reportattendance/pdf" class="btn btn-success">Print PDF</a>
+    {{-- <a href="/reportattendance/pdf" class="btn btn-success">Print PDF</a> --}}
+    <button class="btn btn-info" onclick="window.print();">Print PDF</button>
 </div>
 <div class="container">
     @if (count($attendances) > 0)
