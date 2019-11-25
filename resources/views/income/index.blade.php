@@ -39,6 +39,8 @@
             </div>
         </form>
         <hr>
+        <h4>Total income: {{ $totalincomes }}</h4>
+        <hr>
         @if (count($incomes) > 0)
         <table class="table table-striped table-light">
             <thead class="thead-dark">

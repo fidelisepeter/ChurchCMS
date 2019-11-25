@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Income;
+use Illuminate\Support\Facades\DB;
 
 class IncomeController extends Controller
 {
@@ -28,8 +29,12 @@ class IncomeController extends Controller
         if ($request->has('q'))
             $q = $request->query('q');
 
+        $totalincomes = DB::table('incomes')->sum('amount');
+        // foreach ($totalincomes as $totalincome) {
+        //     $total = sum($totalincome);
+        // }
         $incomes = Income::search($q)->orderBy($sortBy, $orderBy)->paginate($perPage);
-        return view('income.index', compact('incomes', 'orderBy', 'sortBy', 'q', 'perPage'));
+        return view('income.index', compact('totalincomes', 'incomes', 'orderBy', 'sortBy', 'q', 'perPage'));
 
         // $incomes = Income::all();
         // return view('income.index')->with('incomes', $incomes);

@@ -32,7 +32,7 @@ class HomeController extends Controller
     {
         $members = Member::orderBy('bday', 'desc')->take(3)->get();
         $conferences = Conference::orderBy('date_of_conference', 'asc')->take(3)->get();
-        $expenses = Expense::orderBy('date_received', 'desc')->take(5)->get();
+        $expenses = Expense::orderBy('date_received', 'desc')->take(3)->get();
 
         $user_id = auth()->user()->id;
         $user = User::find($user_id);

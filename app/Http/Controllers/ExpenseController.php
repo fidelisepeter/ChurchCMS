@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Expense;
+use Illuminate\Support\Facades\DB;
 
 class ExpenseController extends Controller
 {
@@ -28,8 +29,9 @@ class ExpenseController extends Controller
         if ($request->has('q'))
             $q = $request->query('q');
 
+        $totalexpenses = DB::table('expenses')->sum('amount');
         $expenses = Expense::search($q)->orderBy($sortBy, $orderBy)->paginate($perPage);
-        return view('expense.index', compact('expenses', 'orderBy', 'sortBy', 'q', 'perPage'));
+        return view('expense.index', compact('totalexpenses', 'expenses', 'orderBy', 'sortBy', 'q', 'perPage'));
 
         // $expenses = Expense::all();
         // return view('expense.index')->with('expenses', $expenses);

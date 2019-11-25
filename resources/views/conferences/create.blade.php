@@ -14,7 +14,7 @@
             </div>
             <div class="form-group">
                 {{Form::label('date', 'Date')}}
-                {{Form::date('date', '', ['class' => 'form-control', 'placeholder' => 'Date for Event'])}}
+                {{Form::date('date', '', ['class' => 'form-control', 'placeholder' => 'Date of Event'])}}
             </div>
             <div class="form-group">
                 {{Form::label('start', 'Start')}}
@@ -25,8 +25,8 @@
                 {{Form::time('close', '', ['class' => 'form-control', 'placeholder' => 'Close Time'])}}
             </div>
             <div class="form-group">
-                {{Form::label('rota', 'Duty Rota')}}
-                {{Form::select('rota', ['L' => 'Large', 'S' => 'Small'])}}
+                {{Form::label('attendants', 'Number of attendants')}}
+                {{Form::number('attendants', '', ['class' => 'form-control', 'placeholder' => 'How many people attended'])}}
             </div>
             <div class="form-group">
                 {{Form::file('cover_image')}}

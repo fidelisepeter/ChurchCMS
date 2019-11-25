@@ -42,6 +42,7 @@ class ConferencesController extends Controller
             'date' => 'required',
             'start' => 'required',
             'close' => 'required',
+            'attendants' => 'required',
             'cover_image' => 'image|required|max:1999'
         ]);
         //Handle File Upload
@@ -58,13 +59,14 @@ class ConferencesController extends Controller
             $path = $request->file('cover_image')->storeAs('public/eventcover_images', $fileNameToStore);
         }
 
-        // Create Role
+        // Create Conference
         $conference = new Conference;
         $conference->name = $request->input('name');
         $conference->description = $request->input('description');
         $conference->date_of_conference = $request->input('date');
         $conference->start_time = $request->input('start');
         $conference->close_time = $request->input('close');
+        $conference->attendants = $request->input('attendants');
         $conference->cover_image = $fileNameToStore;
         $conference->save();
 
@@ -90,7 +92,8 @@ class ConferencesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $conference = Conference::find($id);
+        return view('conferences.edit')->with('conference', $conference);
     }
 
     /**
@@ -102,7 +105,41 @@ class ConferencesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required',
+            'description' => 'required',
+            'date' => 'required',
+            'start' => 'required',
+            'close' => 'required',
+            'attendants' => 'required',
+            'cover_image' => 'image|required|max:1999'
+        ]);
+        //Handle File Upload
+        if($request->hasFile('cover_image')){
+            // Get filename with the extension
+            $fileNameWithExt = $request->file('cover_image')->getClientOriginalName();
+            // Get just filename
+            $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+            // Get just Extension
+            $extension = $request->file('cover_image')->getClientOriginalExtension();
+            //Filename to store
+            $fileNameToStore = $filename.'_'.time().'.'.$extension;
+            // Upload Image
+            $path = $request->file('cover_image')->storeAs('public/eventcover_images', $fileNameToStore);
+        }
+
+        // Update Conference
+        $conference = Conference::find($id);
+        $conference->name = $request->input('name');
+        $conference->description = $request->input('description');
+        $conference->date_of_conference = $request->input('date');
+        $conference->start_time = $request->input('start');
+        $conference->close_time = $request->input('close');
+        $conference->attendants = $request->input('attendants');
+        $conference->cover_image = $fileNameToStore;
+        $conference->save();
+
+        return redirect('/conferences')->with('success', 'Conference Updated');
     }
 
     /**

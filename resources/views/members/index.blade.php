@@ -38,9 +38,8 @@
                 <button type="submit" class="btn btn-primary">Filter</button>
             </div>
         </form>
-        <div class="row container">
-            <h5>Total number of members:&nbsp;{{ $totalmembers }}</h5>
-        </div>
+        <hr>
+            <h5>Total number of members: {{ $totalmembers }}</h5>
         <hr>
         @if (count($members) > 0)
         <table class="table table-striped table-light">

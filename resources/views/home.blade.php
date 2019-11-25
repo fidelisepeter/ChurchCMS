@@ -20,19 +20,21 @@
     
     <div class="row">
         <div class="col-md-6">
-            <h3 class="text-center">Upcoming Events</h3>
+            <h3 class="text-center">Event Data</h3>
             @if (count($conferences) > 0)
             <table class="table table-striped table-light">
                 <thead class="thead-dark">
                     <tr>
-                        <th scope="col">Theme Of Conference</th>
-                        <th scope="col">Date For Conference</th>
+                        <th scope="col">Conference Theme</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Attendants</th>
                     </tr>
                 </thead>
                 @foreach($conferences as $conference)
                     <tr>
                         <td>{{$conference->name}}</td>
                         <td>{{$conference->date_of_conference}}</td>
+                        <td>{{$conference->attendants}}</td>
                     </tr>
                 @endforeach
             </table>
@@ -41,37 +43,13 @@
             @endif
         </div>
         <div class="col-md-6">
-            <h3 class="text-center">Upcoming Birthdays</h3>
-            @if (count($members) > 0)
-            <table class="table table-striped table-light">
-                <thead class="thead-dark">
-                    <tr>
-                        <th scope="col">Name</th>
-                        <th scope="col">Birthday</th>
-                    </tr>
-                </thead>
-                @foreach($members as $member)
-                    <tr>
-                        <td>{{$member->name}}</td>
-                        <td>{{$member->bday}}</td>
-                    </tr>
-                @endforeach
-            </table>
-            @else
-                <p>No birthdays are coming up soon</p>
-            @endif
-        </div>
-    </div> 
-
-    <div class="row">
-        <div class="col-md-12">
             <h3 class="text-center">Recent Expenses</h3>
             @if (count($expenses) > 0)
             <table class="table table-striped table-light">
                 <thead class="thead-dark">
                     <tr>
-                        <th scope="col">Expense Category</th>
-                        <th scope="col">Date Received</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Date</th>
                         <th scope="col">Amount</th>
                         <th scope="col">Description</th>
                     </tr>
