@@ -5,7 +5,7 @@
         <h3>Income Records</h3>
         <form action="{{ route('income.index') }}" class="form-inline">
             <div class="form-group mr-sm-2">
-                <input class="form-control" type="search" name="q" value="" placeholder="Enter income type or name">
+                <input class="form-control" type="search" name="q" value="" placeholder="Enter term">
             </div>
             <div class="form-group mr-sm-2">
                 <select class="form-control" name="sortBy" value="">
@@ -37,10 +37,9 @@
             <div class="form-group mr-sm-2">
                 <button type="submit" class="btn btn-primary">Filter</button>
             </div>
+            <a href="/income/create" class="btn btn-warning">Add Income</a>
         </form>
-        <hr>
-        <h4>Total income: {{ $totalincomes }}</h4>
-        <hr>
+        <br>
         @if (count($incomes) > 0)
         <table class="table table-striped table-light">
             <thead class="thead-dark">

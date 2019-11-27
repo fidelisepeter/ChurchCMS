@@ -34,13 +34,12 @@
                     @endforeach
                 </select>
             </div>
-            <div class="form-group mr-sm-2">
+            <div class="form-group mr-lg-5">
                 <button type="submit" class="btn btn-primary">Filter</button>
             </div>
+            <a href="/members/create" class="btn btn-dark" style="float:right;">Add Member</a>
         </form>
-        <hr>
-            <h5>Total number of members: {{ $totalmembers }}</h5>
-        <hr>
+        <br>
         @if (count($members) > 0)
         <table class="table table-striped table-light">
             <thead class="thead-dark">

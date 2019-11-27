@@ -5,7 +5,7 @@
         <h3>Expense Records</h3>
         <form action="{{ route('expense.index') }}" class="form-inline">
             <div class="form-group mr-sm-2">
-                <input class="form-control" type="search" name="q" value="" placeholder="Enter expense type">
+                <input class="form-control" type="search" name="q" value="" placeholder="Enter term">
             </div>
             <div class="form-group mr-sm-2">
                 <select class="form-control" name="sortBy" value="">
@@ -38,9 +38,7 @@
                 <button type="submit" class="btn btn-primary">Filter</button>
             </div>
         </form>
-        <hr>
-        <h4>Total expenditure: {{ $totalexpenses }}</h4>
-        <hr>
+        <br>
         @if (count($expenses) > 0)
         <table class="table table-striped table-light">
             <thead class="thead-dark">

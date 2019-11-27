@@ -47,12 +47,21 @@ class HomeController extends Controller
             'color' => '#383834',
             'backgroundColor' => '#383834',
         ]);;
+        
+        $totalmembers = DB::table('members')->count();
+        $totalexpenses = DB::table('expenses')->sum('amount');
+        $totalincomes = DB::table('incomes')->sum('amount');
+        $totalnewconverts = DB::table('attendances')->sum('number_of_new_converts');
 
         return view('home')->with('sermons', $user->sermons)
                            ->with('members', $members)
                            ->with('conferences', $conferences)
                            ->with('expenses', $expenses)
                            ->with('attendances', $attendances)
-                           ->with('chart', $chart);
+                           ->with('chart', $chart)
+                           ->with('totalmembers', $totalmembers)
+                           ->with('totalexpenses', $totalexpenses)
+                           ->with('totalincomes', $totalincomes)
+                           ->with('totalnewconverts', $totalnewconverts);
     }
 }
