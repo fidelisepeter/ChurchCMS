@@ -61,8 +61,6 @@
                                         <option value="Founder">Child</option>
                                         <option value="HeadPastor">Teen</option>
                                         <option value="AssociatePastor">Adult</option>
-                                        <option value="Administrator">First Timer</option>
-                                        <option value="Elder">New Convert</option>
                                     </select>
                                     @if ($errors->has('member_type'))
                                         <span class="invalid-feedback" role="alert">

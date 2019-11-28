@@ -26,4 +26,7 @@ class UserController extends Controller
         }
         return view('profile', array( 'user' => Auth::user() ));
     }
+    public function update_profile(Request $request, $id) {
+
+    }
 }

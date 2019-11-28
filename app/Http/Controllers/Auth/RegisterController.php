@@ -51,29 +51,8 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
-            'mobile' => 'required|string|max:10',
-            'address' => 'required|string|max:255',
-            'bday' => 'date',
             'password' => 'required|string|min:6|confirmed',
-            // 'profile_image' => 'image|nullable|max:1999',
         ]);
-
-        // if($data->hasFile('profile_image')){
-        //     // Get filename with the extension
-        //     $filenameWithExt = $data->file('profile_image')->getClientOriginalImage();
-        //     // Get just filename
-        //     $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-        //     // Get just ext
-        //     $extension = $data->file('profile_image')->getOriginalClientExtension();
-        //     // Filename to store
-        //     $fileNameToStore = $filename.'_'.time().'.'.$extension;
-        //     // Upload Image
-        //     $path = $data->file('profile_image')->storeAs('public/profile_images',$fileNameToStore);
-
-        // } else {
-        //     $fileNameToStore = 'noimage.jpg';
-        // }
-
     }
 
     /**
@@ -87,11 +66,7 @@ class RegisterController extends Controller
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'mobile' => $data['mobile'],
-            'address' => $data['address'],
-            'bday' => $data['bday'],
             'password' => Hash::make($data['password']),
-            // 'profile_image' => $data[$fileNameToStore],
 
         ]);
     }

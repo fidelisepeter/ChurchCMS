@@ -22,6 +22,7 @@
     
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/argon.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/css/uikit.min.css" />
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.3/css/bootstrap-select.min.css">
@@ -56,7 +57,7 @@
                                 {{ Auth::user()->name }} <span class="caret"></span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                {{-- <a class="dropdown-item" href={{ url('/profile') }}>Edit Profile</a> --}}
+                                <a class="dropdown-item" href={{ url('/profile') }}><span class="uk-margin-small-right" uk-icon="icon: user"></span> Edit Profile</a>
                                 <a class="dropdown-item" href="/notifications"><span class="uk-margin-small-right" uk-icon="icon: bell"></span> Notifications <span class="badge badge-pill badge-dark" >{{ count(auth()->user()->unreadNotifications) }}</span></a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
@@ -122,6 +123,7 @@
             @yield('content')
         </main>
     </div>
+    <script src="{{ asset('js/argon.js') }}" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js" charset="utf-8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit-icons.min.js"></script>

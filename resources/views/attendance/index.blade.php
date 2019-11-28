@@ -1,9 +1,8 @@
 @extends('layouts.homeapp')
 
 @section('content')
-    <div class="container-fluid text-center bg-dark" style="margin-bottom: -17px;">
-        <h2 style="color: white; padding: 10px;">Attendance Insights</h2>
-    </div>
+    <h3 class="mt-0 mb-0" style="text-align:center; background:darkslategrey; color:white;">Attendance Insights</h3>
+   
     <div class="container-fluid row">
         <div class="col-md-6">
             {!! $chart->container() !!}
@@ -12,25 +11,32 @@
             {!! $chart2->container() !!}
         </div>
     </div>
-    {{-- <div class="card-header card-header-lg">
-        <canvas id="bigDashboardChart"></canvas>
-    </div> --}}
     <hr>
     <div class="container">
         @if (count($attendances) > 0)
-        <table class="table table-striped table-light">
-            <thead class="thead-dark">
+        <div class="card shadow">
+            <div class="card-header border-0">
+                <div class="row align-items-center">
+                    <div class="col">
+                        <h3 class="mb-0">Attendance Records</h3>
+                    </div>
+                </div>
+            </div>
+        <div class="table-responsive">
+        <table class="table align-items-center">
+            <thead class="thead-light">
                 <tr>
                     <th scope="col">Date Of Service</th>
-                    <th scope="col">No. of First Timers</th>
-                    <th scope="col">No. of Children</th>
-                    <th scope="col">No. of Teens</th>
-                    <th scope="col">No. of Adults</th>
-                    <th scope="col">No. of New Converts</th>
+                    <th scope="col">First Timers</th>
+                    <th scope="col">Children</th>
+                    <th scope="col">Teens</th>
+                    <th scope="col">Adults</th>
+                    <th scope="col">New Converts</th>
                     <th scope="col">Total</th>
                 </tr>
             </thead>   
             @foreach($attendances as $attendance)
+            <tbody>
                 <tr>
                     <td>{{ $attendance->date_of_service }}</td>
                     <td>{{ $attendance->number_of_first_timers }}</td>
@@ -47,8 +53,11 @@
                         {!!Form::close()!!}
                     </td>
                 </tr>
+            </tbody>
             @endforeach
         </table>
+        </div>
+        </div>
         @else
             <p>You have not recorded any attendance yet</p>
         @endif

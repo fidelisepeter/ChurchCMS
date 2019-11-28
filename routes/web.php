@@ -32,6 +32,7 @@ Route::get('/reportattendance/pdf','ReportController@export_pdfattendance');
 
 Route::get('profile', 'UserController@profile');
 Route::post('profile', 'UserController@update_avatar');
+Route::post('updateprofile','UserController@update_profile');
 
 Route::get('importmembers', 'MembersController@importFile');
 Route::post('import', 'MembersController@importExcel');
