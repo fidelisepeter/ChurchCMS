@@ -29,7 +29,7 @@
                 <div class="card">
                     <div class="card-header">
                         {{ __('Add Member To Church') }}
-                        <a href="/importmembers" class="btn btn-secondary float-right">
+                        <a href="/importmembers" class="btn btn-dark float-right">
                             {{ __('Add Members via Excel File')}}
                         </a>
                     </div>

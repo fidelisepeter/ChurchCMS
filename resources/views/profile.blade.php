@@ -11,22 +11,5 @@
             <input type="submit" class="btn btn-sm btn-primary" value="Upload Image">
         </form>
     </div>
-    <div class="container">
-        {!! Form::open(['action' => ['UserController@update_profile', $user->id], 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
-            <div class="form-group">
-                {{Form::label('name', 'Name')}}
-                {{Form::text('name', '', ['class' => 'form-control', 'placeholder' => 'Enter name'])}}
-            </div>
-            <div class="form-group">
-                {{Form::label('email', 'Email')}}
-                {{Form::text('email', '', ['class' => 'form-control', 'placeholder' => 'Enter email'])}}
-            </div>
-            <div class="form-group">
-                {{Form::label('password', 'Password')}}
-                {{Form::password('password', '', ['class' => 'form-control'])}}
-            </div>
-            {{Form::hidden('_method','PUT')}}
-            {{Form::submit('Edit Profile', ['class' => 'btn btn-primary'])}}
-        {!! Form::close() !!}
-    </div>
+    
 @endsection

@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h1>Create Event or Conference</h1>
+        <h1>Add Event or Conference</h1>
         {!! Form::open(['action' => 'ConferencesController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
             <div class="form-group">
                 {{Form::label('name', 'Name')}}

@@ -43,9 +43,9 @@ class HomeController extends Controller
         
         $chart = new AttendanceChart;
         $chart->labels($data2);
+        $chart->loaderColor('#e8daef');
         $chart->dataset('Overall Attendance', 'line', $data)->options([
-            'color' => 'white',
-            'backgroundColor' => ' #e8daef',
+            'backgroundColor' => 'white',
         ]);;
         
         $totalmembers = DB::table('members')->count();

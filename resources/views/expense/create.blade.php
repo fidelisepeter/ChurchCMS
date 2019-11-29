@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h1>Create Expense</h1>
+        <h1>Add Expense</h1>
         {!! Form::open(['action' => 'ExpenseController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
             
             <div class="form-group">

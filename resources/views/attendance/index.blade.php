@@ -1,17 +1,30 @@
 @extends('layouts.homeapp')
 
 @section('content')
-    <h3 class="mt-0 mb-0" style="text-align:center; background:darkslategrey; color:white;">Attendance Insights</h3>
-   
-    <div class="container-fluid row">
-        <div class="col-md-6">
-            {!! $chart->container() !!}
-        </div>
-        <div class="col-md-6">
-            {!! $chart2->container() !!}
+    <div class="container-fluid">
+        <div class="card shadow">
+            <div class="card-header border-0">
+                <div class="row align-items-center">
+                    <div class="col">
+                        <h3 class="mb-0">Attendance Insights</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body bg-gradient-purple">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6 style="color:white;">First Timers</h6>
+                        <div>{!! $chart->container() !!}</div>
+                    </div>
+                    <div class="col-md-6">
+                        <h6 style="color:white;">New Converts</h6>
+                        <div>{!! $chart2->container() !!}</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <hr>
+    <br>
     <div class="container">
         @if (count($attendances) > 0)
         <div class="card shadow">

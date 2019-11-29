@@ -25,16 +25,18 @@ class AttendanceController extends Controller
         
         $chart = new AttendanceChart;
         $chart->labels($data2);
-        $chart->dataset('Number of First Timers', 'line', $data)->options([
-            'color' => '#825ba8',
-            'backgroundColor' => '#825ba8',
+        $chart->loaderColor('grey');
+        $chart->dataset('First Timers', 'line', $data)->options([
+            'color' => 'black',
+            'backgroundColor' => 'white',
         ]);
 
         $chart2 = new AttendanceChart;
         $chart2->labels($data4);
-        $chart2->dataset('Number of New Converts', 'bar', $data3)->options([
-            'color' => '#2b7326',
-            'backgroundColor' => '#2b7326',
+        $chart->loaderColor('grey');
+        $chart2->dataset('New Converts', 'line', $data3)->options([
+            'color' => 'black',
+            'backgroundColor' => 'white',
         ]);
 
         return view('attendance.index')->with('attendances', $attendances)

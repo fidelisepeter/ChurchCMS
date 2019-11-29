@@ -11,16 +11,16 @@
                             <h5 class="card-title text-uppercase text-muted mb-0">Total Members</h5>
                             <span class="h2 font-weight-bold mb-0">{{ $totalmembers }}</span>
                         </div>
-                        {{-- <div class="col-auto">
+                        <div class="col-auto">
                             <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
                                 <i class="fas fa-users"></i>
                             </div>
-                        </div> --}}
+                        </div>
                     </div>
-                    <p class="mt-3 mb-0 text-muted text-sm">
+                    {{-- <p class="mt-3 mb-0 text-muted text-sm">
                         <span class="text-success mr-2"><span uk-icon="icon: arrow-up"> 3.48%</span>
                         <span class="text-nowrap">Since last month</span>
-                    </p>
+                    </p> --}}
                 </div>
             </div>
         </div>
@@ -32,16 +32,16 @@
                             <h5 class="card-title text-uppercase text-muted mb-0">Total Expenses</h5>
                             <span class="h2 font-weight-bold mb-0">{{ $totalexpenses }}</span>
                         </div>
-                        {{-- <div class="col-auto">
+                        <div class="col-auto">
                             <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
-                                {{-- <i class="fas fa-money-check-alt"></i>
+                                <i class="fas fa-money-check-alt"></i>
                             </div>
-                        </div> --}}
+                        </div>
                     </div>
-                    <p class="mt-3 mb-0 text-muted text-sm">
+                    {{-- <p class="mt-3 mb-0 text-muted text-sm">
                         <span class="text-danger mr-2"><span uk-icon="icon: arrow-down"> 3.48%</span>
                         <span class="text-nowrap">Since last week</span>
-                    </p>
+                    </p> --}}
                 </div>
             </div>
         </div>
@@ -53,15 +53,15 @@
                             <h5 class="card-title text-uppercase text-muted mb-0">Total Income</h5>
                             <span class="h2 font-weight-bold mb-0">{{ $totalincomes }}</span>
                         </div>
-                        {{-- <div class="col-auto">
+                        <div class="col-auto">
                             <div class="icon icon-shape bg-yellow text-white rounded-circle shadow">
-                                {{-- <i class="fas fa-hand-holding-usd"></i>                             </div>
-                        </div> --}}
+                                <i class="fas fa-hand-holding-usd"></i>                             </div>
+                        </div>
                     </div>
-                    <p class="mt-3 mb-0 text-muted text-sm">
+                    {{-- <p class="mt-3 mb-0 text-muted text-sm">
                         <span class="text-warning mr-2"><span uk-icon="icon: arrow-down"> 1.10%</span>
                         <span class="text-nowrap">Since yesterday</span>
-                    </p>
+                    </p> --}}
                 </div>
             </div>
         </div>
@@ -73,16 +73,16 @@
                             <h5 class="card-title text-uppercase text-muted mb-0">Total Converts</h5>
                             <span class="h2 font-weight-bold mb-0">{{ $totalnewconverts }}</span>
                         </div>
-                        {{-- <div class="col-auto">
+                        <div class="col-auto">
                             <div class="icon icon-shape bg-info text-white rounded-circle shadow">
-                                {{-- <i class="fas fa-pray"></i>
+                                <i class="fas fa-pray"></i>
                             </div>
-                        </div> --}}
+                        </div>
                     </div>
-                    <p class="mt-3 mb-0 text-muted text-sm">
+                    {{-- <p class="mt-3 mb-0 text-muted text-sm">
                         <span class="text-success mr-2"><span uk-icon="icon: arrow-up"> 12%</span>
                         <span class="text-nowrap">Since last month</span>
-                    </p>
+                    </p> --}}
                 </div>
             </div>
         </div>
@@ -93,13 +93,23 @@
     <a href="/sermons/create" class="btn btn-success">Add Note</a>
     <a href="/income/create" class="btn btn-warning">Add Income</a>
     <a href="/expense/create" class="btn btn-info">Add Expense</a>
-    <a href="/conferences/create" class="btn btn-secondary">Add Event</a>
+    <a href="/conferences/create" class="btn btn-danger">Add Event</a>
     <a href="/attendance/create" class="btn btn-primary">Add Attendance</a>
 </div>
 <br>
 <div class="container-fluid">
     <div class="card shadow">
-        <div class="card-body">
+        <div class="card-header border-0">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h3 class="mb-0">Overall Attendance</h3>
+                </div>
+                <div class="col text-right">
+                    <a href="/attendance" class="btn btn-sm btn-primary">See all</a>
+                </div>
+            </div>
+        </div>
+        <div class="card-body bg-gradient-purple">
             {!! $chart->container() !!}
         </div>
     </div>
