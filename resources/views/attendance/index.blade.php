@@ -36,7 +36,7 @@
                 </div>
             </div>
         <div class="table-responsive">
-        <table class="table align-items-center">
+        <table class="table align-items-center table-hover">
             <thead class="thead-light">
                 <tr>
                     <th scope="col">Date Of Service</th>

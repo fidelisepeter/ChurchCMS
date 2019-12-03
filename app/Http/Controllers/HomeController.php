@@ -43,7 +43,7 @@ class HomeController extends Controller
         
         $chart = new AttendanceChart;
         $chart->labels($data2);
-        $chart->loaderColor('#e8daef');
+        $chart->loaderColor('#32325d');
         $chart->dataset('Overall Attendance', 'line', $data)->options([
             'backgroundColor' => 'white',
         ]);;

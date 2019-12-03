@@ -109,7 +109,7 @@
                 </div>
             </div>
         </div>
-        <div class="card-body bg-gradient-purple">
+        <div class="card-body bg-gradient-gray-dark">
             {!! $chart->container() !!}
         </div>
     </div>
