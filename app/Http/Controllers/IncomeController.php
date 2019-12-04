@@ -30,9 +30,7 @@ class IncomeController extends Controller
             $q = $request->query('q');
 
         $totalincomes = DB::table('incomes')->sum('amount');
-        // foreach ($totalincomes as $totalincome) {
-        //     $total = sum($totalincome);
-        // }
+        
         $incomes = Income::search($q)->orderBy($sortBy, $orderBy)->paginate($perPage);
         return view('income.index', compact('totalincomes', 'incomes', 'orderBy', 'sortBy', 'q', 'perPage'));
 

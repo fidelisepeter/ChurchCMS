@@ -6,11 +6,11 @@
             <div class="card-header border-0">
                 <div class="row align-items-center">
                     <div class="col">
-                        <h3 class="mb-0">Attendance Insights</h3>
+                        <h3 class="mb-0">Attendance Charts</h3>
                     </div>
                 </div>
             </div>
-            <div class="card-body bg-gradient-purple">
+            <div class="card-body bg-gradient-gray-dark">
                 <div class="row">
                     <div class="col-md-6">
                         <h6 style="color:white;">First Timers</h6>

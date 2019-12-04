@@ -118,15 +118,15 @@
 <div class="container text-center">
     <div class="row">
         <div class="col-md-6">
-            @if (count($conferences) > 0)
+            @if (count($incomes) > 0)
             <div class="card shadow">
                 <div class="card-header border-0">
                     <div class="row align-items-center">
                         <div class="col">
-                            <h3 class="mb-0">Event Data</h3>
+                            <h3 class="mb-0">Recent Incomes</h3>
                         </div>
                         <div class="col text-right">
-                            <a href="/conferences" class="btn btn-sm btn-primary">See all</a>
+                            <a href="/income" class="btn btn-sm btn-primary">See all</a>
                         </div>
                     </div>
                 </div>
@@ -134,17 +134,19 @@
                     <table class="table align-items-center table-hover">
                     <thead class="thead-light">
                         <tr>
-                            <th scope="col">Conference Theme</th>
+                            <th scope="col">Paid By</th>
+                            <th scope="col">Category</th>
                             <th scope="col">Date</th>
-                            <th scope="col">Attendants</th>
+                            <th scope="col">Amount</th>
                         </tr>
                     </thead>
-                    @foreach($conferences as $conference)
+                    @foreach($incomes as $income)
                     <tbody>
                         <tr>
-                            <td scope="row">{{$conference->name}}</td>
-                            <td scope="row">{{$conference->date_of_conference}}</td>
-                            <td scope="row">{{$conference->attendants}}</td>
+                            <td scope="row">{{$income->paid_by}}</td>
+                            <td scope="row">{{$income->income_type}}</td>
+                            <td scope="row">{{$income->date_received}}</td>
+                            <td scope="row">{{$income->amount}}</td>
                         </tr>
                     </tbody>
                     @endforeach

@@ -2,8 +2,6 @@
 
 @section('content')
     <div class="container">
-       
-        <br>
         @if (count($incomes) > 0)
         <div class="card shadow">
             <div class="card-header border-0">
