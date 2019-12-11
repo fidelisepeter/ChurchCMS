@@ -31,7 +31,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $members = Member::orderBy('bday', 'desc')->take(3)->get();
+        $members = Member::all();
         $conferences = Conference::orderBy('date_of_conference', 'asc')->take(3)->get();
         $expenses = Expense::orderBy('date_received', 'desc')->take(3)->get();
         $incomes = Income::orderBy('date_received', 'desc')->take(3)->get();
