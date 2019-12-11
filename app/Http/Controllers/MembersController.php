@@ -5,16 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Member;
-use App\Department;
-use Barryvdh\DomPDF\PDF as PDF;
-use App\User;
-use App\Notifications\MemberAdded;
 use Excel;
 use App\Imports\MembersImport;
-use App\Notifications\MembersSMS;
-use Notification;
-use Validator;
-use Importer;
 
 class MembersController extends Controller
 {
@@ -113,10 +105,6 @@ class MembersController extends Controller
         $member->previouschurch = $request->input('previouschurch');
         $member->member_image = $fileNameToStore;
         $member->save();
-        
-        // Notification::send($member->addedMembers()->get(), new MembersSMS($entry));
-
-        auth()->user()->notify(new MemberAdded());
 
         return redirect('/members')->with('success', 'Member Added');
     }

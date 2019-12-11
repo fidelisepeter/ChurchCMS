@@ -16,6 +16,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/insights', function() {
+    return view('insights');
+});
+
+Route::get('/messaging', function() {
+    return view('messaging');
+});
+
 Route::get('/notifications', function() {
     return view('notifications');
 });

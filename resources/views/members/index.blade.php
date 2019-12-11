@@ -7,7 +7,7 @@
             <div class="card-header border-0">
                 <div class="row align-items-center">
                     <div class="col">
-                        <h3 class="mb-0 mr-4 pull-left">Members Directory</h3>
+                        <h3 class="mb-0 pull-left">Members Directory</h3>
                         <form action="{{ route('members.index') }}" class="form-inline">
                             <div class="form-group mr-sm-2">
                                 <input class="form-control" type="search" name="q" value="" placeholder="Enter name, position or department">
@@ -39,10 +39,12 @@
                                     @endforeach
                                 </select>
                             </div>
-                            <div class="form-group mr-lg-5">
+                            <div class="form-group mr-lg-7">
                                 <button type="submit" class="btn btn-primary">Search</button>
                             </div>
-                            <a href="/members/create" class="btn btn-dark" style="float:right;">Add Member</a>
+                            <div class="form-group">
+                                    <a href="/members/create" class="btn btn-dark" style="float:right;">Add Member</a>
+                            </div>
                         </form>
                     </div>
                 </div>

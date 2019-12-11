@@ -60,7 +60,7 @@
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href={{ url('/profile') }}><span class="uk-margin-small-right" uk-icon="icon: user"></span> Edit Profile</a>
-                                <a class="dropdown-item" href="/notifications"><span class="uk-margin-small-right" uk-icon="icon: bell"></span> Notifications <span class="badge badge-pill badge-dark" >{{ count(auth()->user()->unreadNotifications) }}</span></a>
+                                {{-- <a class="dropdown-item" href="/notifications"><span class="uk-margin-small-right" uk-icon="icon: bell"></span> Notifications <span class="badge badge-pill badge-dark" >{{ count(auth()->user()->unreadNotifications) }}</span></a> --}}
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
                                                     document.getElementById('logout-form').submit();"><span class="uk-margin-small-right" uk-icon="icon: sign-out"></span> 
@@ -83,17 +83,13 @@
                     <br>
                     <li class="uk-nav-divider"></li>
                     <br>
-                    <li><a href="/members"><span class="uk-margin-small-right" uk-icon="icon: users"></span> Members Directory</a></li>
+                    <li><a href="/members"><span class="uk-margin-small-right" uk-icon="icon: users"></span> Members</a></li>
+                    <li><a href="/messaging"><span class="uk-margin-small-right" uk-icon="icon: phone"></span> Messaging</a></li>
                     <br>
-                    {{-- <li><a href="/members"><span class="uk-margin-small-right" uk-icon="icon: users"></span> Church Directory</a></li>
-                    <br> --}}
                     <li class="uk-nav-divider"></li>
                     <br>
                     <li><a href="/sermons"><span class="uk-margin-small-right" uk-icon="icon: bookmark"></span> Bible Notes</a></li>
-                    {{-- <li><a href="/services"><span class="uk-margin-small-right" uk-icon="icon: tag"></span> Church Services</a></li> --}}
                     <li><a href="/conferences"><span class="uk-margin-small-right" uk-icon="icon: calendar"></span> Events &amp; Conferences</a></li>
-                    {{-- <li><a href="/roles"><span class="uk-margin-small-right" uk-icon="icon: user"></span> Roles</a></li> --}}
-                    {{-- <li><a href="/departments"><span class="uk-margin-small-right" uk-icon="icon: copy"></span> Departments</a></li> --}}
                     <br>
                     <li class="uk-nav-divider"></li>
                     <br>
@@ -110,12 +106,16 @@
                             <li><a href="/income"><span class="uk-margin-small-right" uk-icon="icon: pull"></span> Income</a></li>
                         </ul>
                     </li> --}}
-                    <li><a href="/attendance"><span class="uk-margin-small-right" uk-icon="icon: gitter"></span>  Attendance Insights</a></li>
+                    <li><a href="/attendance"><span class="uk-margin-small-right" uk-icon="icon: gitter"></span> Attendance</a></li>
                     <br>
                     <li class="uk-nav-divider"></li>
                     <br>
-                    <li><a href="/reports"><span class="uk-margin-small-right" uk-icon="icon: file-pdf"></span>  Reports</a></li>
+                    <li><a href="/insights"><span class="uk-margin-small-right" uk-icon="icon: album"></span> Insights</a></li>
                     <br>
+                    <li class="uk-nav-divider"></li>
+                    <br>
+                    <li><a href="/reports"><span class="uk-margin-small-right" uk-icon="icon: file-pdf"></span> Reports</a></li>
+                    
                 </ul>
             </div>
         </div>

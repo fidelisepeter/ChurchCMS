@@ -4,12 +4,11 @@ namespace App\Notifications;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
-use Illuminate\Notifications\Messages\NexmoMessage;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
-use App\Member;
+use Illuminate\Notifications\Messages\NexmoMessage;
 
-class MembersSMS extends Notification
+class SMStoMembers extends Notification
 {
     use Queueable;
 
@@ -18,12 +17,9 @@ class MembersSMS extends Notification
      *
      * @return void
      */
-
-    protected $entry;
-
-    public function __construct(Member $entry)
+    public function __construct()
     {
-        $this->entry = $entry;
+        //
     }
 
     /**
@@ -35,6 +31,13 @@ class MembersSMS extends Notification
     public function via($notifiable)
     {
         return ['nexmo'];
+    }
+
+    public function toNexmo($notifiable)
+    {
+        return(new NexmoMessage)
+            ->content('We have service at today at 6:30pm')
+            ->from('0542865407');
     }
 
     /**
@@ -62,11 +65,5 @@ class MembersSMS extends Notification
         return [
             //
         ];
-    }
-    
-    public function toNexmo($notifiable)
-    {
-        return (new NexmoMessage)
-            ->content($this->entry->content);
     }
 }
