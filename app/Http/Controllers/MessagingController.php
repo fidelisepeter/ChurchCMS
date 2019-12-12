@@ -18,6 +18,19 @@ class MessagingController extends Controller
         return view('messaging.index')->with('members', $members);
     }
 
+    public function message (Request $request) {
+        $message = $request->input('message');
+        $mobile = $request->input('mobile');
+        $encodeMessage = urlencode($message);
+        $authkey = '';
+        $senderId = '';
+        $route = 4;
+        $postData = $request->all();
+        $mobileNumber = implode(" ", $postData);
+        print_r($mobileNumber);
+        exit();
+    }
+
     /**
      * Show the form for creating a new resource.
      *

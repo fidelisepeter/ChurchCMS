@@ -47,6 +47,8 @@ Route::post('updateprofile','UserController@update_profile');
 Route::get('importmembers', 'MembersController@importFile');
 Route::post('import', 'MembersController@importExcel');
 
+Route::post('/message', 'MessagingController@message');
+
 Route::resource('sermons', 'SermonsController');
 Route::resource('messaging', 'MessagingController');
 Route::resource('services', 'ServicesController');

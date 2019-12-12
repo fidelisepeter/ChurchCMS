@@ -13,7 +13,7 @@
             <div class="card-body">
                 <h4>Send SMS to Members</h4>
                 <p><small class="text-muted">Type message, select recepients, click on Send Message, then Viola! Your message is sent!</small></p>
-                <form action="{{ url('sms_all') }}" method="POST">
+                <form action="{{ url('/message') }}" method="POST">
                     {{ csrf_field() }}
                     <div class="form-group">
                         <label for="message">Enter Message Here</label>
@@ -36,7 +36,7 @@
                         <tbody>
                             <tr>
                                 <td scope="row">
-                                    <input type="checkbox" name="mobile[]" value="{{ $member->mobile }}" class="checkbox">
+                                    <input type="checkbox" name="mobile" value="{{ $member->mobile }}" class="checkbox">
                                 </td>
                                 <td scope="row"><img style="width: 30px; height: 30px;" src="/storage/member_images/{{ $member->member_image }}" alt=""></td>
                                 <td scope="row">{{ $member->name }}</td>
