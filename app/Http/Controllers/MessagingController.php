@@ -26,9 +26,9 @@ class MessagingController extends Controller
         $senderId = '';
         $route = 4;
         $postData = $request->all();
-        $mobileNumber = implode(" ", $postData);
-        print_r($mobileNumber);
+        print_r($postData);
         exit();
+        $mobileNumber = implode(' ');
     }
 
     /**

@@ -3,14 +3,14 @@
 @section('content')
 <div class="container">
     <div class="card shadow">
-        <div class="card-header border-0">
+        <div class="card-header border-0 bg-gradient-gray-dark">
             <div class="row align-items-center">
                 <div class="col">
-                    <h3 class="mb-0">What kind of insights are you looking for? <i class="fas fa-pray"></i></h3>
+                    <h3 class="mb-0" style="color:white;">What kind of insights are you looking for? <i class="fas fa-pray"></i></h3>
                 </div>
             </div>
         </div>
-        <div class="card-body bg-gradient-gray-dark">
+        <div class="card-body">
             <div class="container pb-3">
                 <div class="row">
                     <div class="col-xl-3 col-lg-6">
