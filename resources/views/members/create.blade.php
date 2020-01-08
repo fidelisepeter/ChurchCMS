@@ -58,9 +58,9 @@
                                 <div class="col-md-6">
                                     {{-- <input id="position" type="select" class="form-control{{ $errors->has('position') ? ' is-invalid' : '' }}" name="position" value="{{ old('position') }}" required autofocus> --}}
                                     <select class="form-control" id="member_type" name="member_type">
-                                        <option value="Founder">Child</option>
-                                        <option value="HeadPastor">Teen</option>
-                                        <option value="AssociatePastor">Adult</option>
+                                        <option value="Child">Child</option>
+                                        <option value="Teen">Teen</option>
+                                        <option value="Adult">Adult</option>
                                     </select>
                                     @if ($errors->has('member_type'))
                                         <span class="invalid-feedback" role="alert">

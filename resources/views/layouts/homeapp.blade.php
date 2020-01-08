@@ -84,7 +84,8 @@
                     <li class="uk-nav-divider"></li>
                     <br>
                     <li><a href="/members"><span class="uk-margin-small-right" uk-icon="icon: users"></span> Members</a></li>
-                    <li><a href="/messaging"><span class="uk-margin-small-right" uk-icon="icon: phone"></span> Messaging</a></li>
+                    <li><a href="/expense"><span class="uk-margin-small-right" uk-icon="icon: push"></span> Expenses</a></li>
+                    <li><a href="/income"><span class="uk-margin-small-right" uk-icon="icon: pull"></span> Incomes</a></li>
                     <br>
                     <li class="uk-nav-divider"></li>
                     <br>
@@ -93,8 +94,7 @@
                     <br>
                     <li class="uk-nav-divider"></li>
                     <br>
-                    <li><a href="/expense"><span class="uk-margin-small-right" uk-icon="icon: push"></span> Expenses</a></li>
-                    <li><a href="/income"><span class="uk-margin-small-right" uk-icon="icon: pull"></span> Incomes</a></li>
+                    <li><a href="/messaging"><span class="uk-margin-small-right" uk-icon="icon: phone"></span> Messaging</a></li>
                     <br>
                     <li class="uk-nav-divider"></li>
                     <br>
@@ -108,10 +108,10 @@
                     </li> --}}
                     <li><a href="/attendance"><span class="uk-margin-small-right" uk-icon="icon: gitter"></span> Attendance</a></li>
                     <br>
-                    <li class="uk-nav-divider"></li>
+                    {{-- <li class="uk-nav-divider"></li>
                     <br>
                     <li><a href="/insights"><span class="uk-margin-small-right" uk-icon="icon: album"></span> Insights</a></li>
-                    <br>
+                    <br> --}}
                     <li class="uk-nav-divider"></li>
                     <br>
                     <li><a href="/reports"><span class="uk-margin-small-right" uk-icon="icon: file-pdf"></span> Reports</a></li>

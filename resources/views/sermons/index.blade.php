@@ -10,7 +10,7 @@
                     </div>
                 </div>
             </div>
-            <div class="card-body bg-gradient-gray">
+            <div class="card-body">
                 @if (count($sermons) > 0)
                     @foreach ($sermons as $sermon)
                         <div class="card shadow">

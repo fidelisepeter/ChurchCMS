@@ -10,14 +10,14 @@
                     </div>
                 </div>
             </div>
-            <div class="card-body bg-gradient-gray-dark">
+            <div class="card-body">
                 <div class="row">
                     <div class="col-md-6">
-                        <h6 style="color:white;">First Timers</h6>
+                        <h6>First Timers</h6>
                         <div>{!! $chart->container() !!}</div>
                     </div>
                     <div class="col-md-6">
-                        <h6 style="color:white;">New Converts</h6>
+                        <h6>New Converts</h6>
                         <div>{!! $chart2->container() !!}</div>
                     </div>
                 </div>

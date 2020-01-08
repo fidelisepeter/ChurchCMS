@@ -10,7 +10,7 @@
                     </div>
                 </div>
             </div>
-            <div class="card-body bg-gradient-gray">
+            <div class="card-body">
                 @if (count($conferences) > 0)
                     @foreach ($conferences as $conference)
                     <div class="card shadow pt-3 pr-3 pl-3 pb-3">

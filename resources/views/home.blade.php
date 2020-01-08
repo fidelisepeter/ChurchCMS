@@ -89,12 +89,12 @@
     </div>
 </div>
 <div class="container text-center">
-    <a href="/members/create" class="btn btn-dark">Add Member</a>
-    <a href="/sermons/create" class="btn btn-success">Add Note</a>
-    <a href="/income/create" class="btn btn-warning">Add Income</a>
-    <a href="/expense/create" class="btn btn-info">Add Expense</a>
-    <a href="/conferences/create" class="btn btn-danger">Add Event</a>
-    <a href="/attendance/create" class="btn btn-primary">Add Attendance</a>
+    <a href="/members/create" class="btn btn-light">Add Member</a>
+    <a href="/sermons/create" class="btn btn-light">Add Note</a>
+    <a href="/income/create" class="btn btn-light">Add Income</a>
+    <a href="/expense/create" class="btn btn-light">Add Expense</a>
+    <a href="/conferences/create" class="btn btn-light">Add Event</a>
+    <a href="/attendance/create" class="btn btn-light">Add Attendance</a>
 </div>
 <br>
 <div class="container-fluid">
@@ -109,7 +109,7 @@
                 </div>
             </div>
         </div>
-        <div class="card-body bg-gradient-gray-dark">
+        <div class="card-body">
             {!! $chart->container() !!}
         </div>
     </div>
