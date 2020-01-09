@@ -55,6 +55,19 @@
                     @else
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="position: relative; padding-left: 50px;" v-pre>
+                                Quick Functions<span class="caret"></span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown"> 
+                                <a class="dropdown-item" href={{ url('/members/create') }}><span class="uk-margin-small-right" uk-icon="icon: user"></span> Add Member</a>
+                                <a class="dropdown-item" href={{ url('/attendance/create') }}><span class="uk-margin-small-right" uk-icon="icon: gitter"></span> Add Attendance</a>
+                                <a class="dropdown-item" href={{ url('/income/create') }}><span class="uk-margin-small-right" uk-icon="icon: pull"></span> Add Income</a>
+                                <a class="dropdown-item" href={{ url('/expense/create') }}><span class="uk-margin-small-right" uk-icon="icon: push"></span> Add Expense</a>
+                                <a class="dropdown-item" href={{ url('/sermons/create') }}><span class="uk-margin-small-right" uk-icon="icon: bookmark"></span> Add Sermon</a>
+                                <a class="dropdown-item" href={{ url('/conferences/create') }}><span class="uk-margin-small-right" uk-icon="icon: calendar"></span> Add Event</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="position: relative; padding-left: 50px;" v-pre>
                                 <img src="/uploads/avatars/{{ Auth::user()->avatar }}" style="width: 32px; height:32px; position: absolute; top: 10px; left: 10px; border-radius: 45%">
                                 {{ Auth::user()->name }} <span class="caret"></span>
                             </a>

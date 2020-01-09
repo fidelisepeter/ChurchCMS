@@ -42,9 +42,6 @@
                             <div class="form-group mr-lg-7">
                                 <button type="submit" class="btn btn-primary">Search</button>
                             </div>
-                            <div class="form-group">
-                                <a href="/income/create" class="btn btn-dark">Add Income</a>
-                            </div>
                         </form>
                     </div>
                 </div>

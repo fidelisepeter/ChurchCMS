@@ -42,9 +42,6 @@
                             <div class="form-group mr-lg-7">
                                 <button type="submit" class="btn btn-primary">Search</button>
                             </div>
-                            <div class="form-group">
-                                    <a href="/members/create" class="btn btn-dark" style="float:right;">Add Member</a>
-                            </div>
                         </form>
                     </div>
                 </div>

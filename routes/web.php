@@ -52,14 +52,11 @@ Route::post('/message', 'MessagingController@message');
 Route::resource('sermons', 'SermonsController');
 Route::resource('messaging', 'MessagingController');
 Route::resource('services', 'ServicesController');
-Route::resource('roles', 'RolesController');
 Route::resource('conferences', 'ConferencesController');
-Route::resource('addressbook', 'AddressesController');
 Route::resource('members', 'MembersController');
 Route::resource('expense', 'ExpenseController');
 Route::resource('income', 'IncomeController');
 Route::resource('attendance', 'AttendanceController');
-Route::resource('departments', 'DepartmentsController');
 
 Auth::routes();
 

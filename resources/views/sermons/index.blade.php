@@ -3,10 +3,10 @@
 @section('content')
     <div class="container">
         <div class="card shadow">
-            <div class="card-header border-0 bg-gradient-gray-dark">
+            <div class="card-header border-0">
                 <div class="row align-items-center">
                     <div class="col">
-                        <h3 class="mb-0" style="color:white;">Bible Notes</h3>
+                        <h3 class="mb-0">Sermon Notes</h3>
                     </div>
                 </div>
             </div>

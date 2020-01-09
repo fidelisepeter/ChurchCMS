@@ -34,7 +34,7 @@
                         </div>
                         <div class="col-auto">
                             <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
-                                <i class="fas fa-money-check-alt"></i>
+                                <i class="fas fa-shopping-cart"></i>
                             </div>
                         </div>
                     </div>
@@ -88,14 +88,14 @@
         </div>
     </div>
 </div>
-<div class="container text-center">
+{{-- <div class="container text-center">
     <a href="/members/create" class="btn btn-light">Add Member</a>
     <a href="/sermons/create" class="btn btn-light">Add Note</a>
     <a href="/income/create" class="btn btn-light">Add Income</a>
     <a href="/expense/create" class="btn btn-light">Add Expense</a>
     <a href="/conferences/create" class="btn btn-light">Add Event</a>
     <a href="/attendance/create" class="btn btn-light">Add Attendance</a>
-</div>
+</div> --}}
 <br>
 <div class="container-fluid">
     <div class="card shadow">
@@ -206,7 +206,7 @@
                 <div class="card-header border-0">
                     <div class="row align-items-center">
                         <div class="col">
-                            <h3 class="mb-0">Your Published Notes</h3>
+                            <h3 class="mb-0">Your Sermon Notes</h3>
                         </div>
                         <div class="col text-right">
                             <a href="/sermons" class="btn btn-sm btn-primary">See all</a>

@@ -3,15 +3,14 @@
 @section('content')
     <div class="container">
         <div class="card shadow">
-            <div class="card-header border-0 bg-gradient-gray-dark">
+            <div class="card-header border-0">
                 <div class="row align-items-center">
                     <div class="col">
-                        <h3 class="mb-0" style="color:white;">Messaging Members</h3>
+                        <h3 class="mb-0">Send SMS to Members</h3>
                     </div>
                 </div>
             </div>
             <div class="card-body">
-                <h4>Send SMS to Members</h4>
                 <p><small class="text-muted">Type message, select recepients, click on Send Message, then Viola! Your message is sent!</small></p>
                 <form action="{{ url('/message') }}" method="POST">
                     {{ csrf_field() }}
@@ -50,7 +49,7 @@
                     @endif  
                     </table>
                     <br>
-                    <div class="form-group">
+                    <div class="form-group col-md-6 offset-md-4">
                         <button type="submit" class="btn btn-primary">Send Message</button>
                     </div>
                 </form>
