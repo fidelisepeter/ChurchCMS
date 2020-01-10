@@ -4,23 +4,24 @@
 <div class="container">
     <div class="row">
         <a href="/members" class="btn btn-secondary">Go Back</a>
-        <a href="/members/{{$member->id}}/edit" class="btn btn-primary">Edit</a>
+        <a href="/members/{{$member->id}}/edit" class="btn btn-primary">Edit Member</a>
         {!!Form::open(['action' => ['MembersController@destroy', $member->id], 'method' => 'POST'])!!}
             {{Form::hidden('_method', 'DELETE')}}
-            {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
-        {!!Form::close()!!}
+            {{Form::submit('Delete Member', ['class' => 'btn btn-danger'])}}
+        {!!Form::close()!!}&nbsp;&nbsp;
+        <a href="#" class="btn btn-success">Send SMS to {{ $member->name}}</a>
         <br>
     </div>
 </div>
 <br><br>
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="card">
+        <div class="col-md-12">
+            <div class="card shadow">
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-4">
-                            <img style="width: 200px; height: 200px; border-raduis: 40%; float: left; margin-right: 20px;" src="/storage/member_images/{{ $member->member_image }}" alt="">
+                            <img style="width: 300px; height: 300px; border-raduis: 40%; float: left; margin-right: 20px;" src="/storage/member_images/{{ $member->member_image }}" alt="">
                         </div>
                         <div class="col-md-4">
                             <p>Name: {{ $member->name}}</p>
