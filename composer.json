@@ -20,7 +20,8 @@
         "maatwebsite/excel": "^3.1",
         "mpdf/mpdf": "^8.0",
         "nesbot/carbon": "2.25.0 as 1.25.0",
-        "nexmo/laravel": "^2.0"
+        "nexmo/laravel": "^2.0",
+        "twilio/sdk": "^5.42"
     },
     "require-dev": {
         "filp/whoops": "^2.0",
