@@ -10,7 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-use App\Member;
 
 Route::get('/', function () {
     // User::find(1)->notify(new TestingNotification);
@@ -20,11 +19,6 @@ Route::get('/', function () {
 Route::get('/insights', function() {
     return view('insights');
 });
-
-// Route::get('/messaging', function() {
-//     $members = Member::all();
-//     return view('messaging')->with('members', $members);
-// });
 
 Route::get('/notifications', function() {
     return view('notifications');
@@ -36,9 +30,6 @@ Route::get('/reports', function(){
 Route::get('/reportmembers', 'ReportController@members');
 Route::get('/reportattendance', 'ReportController@attendance');
 Route::get('/reportincome', 'ReportController@income');
-Route::get('/reportmembers/pdf','ReportController@export_pdfmembers');
-Route::get('/reportincome/pdf','ReportController@export_pdfincome');
-Route::get('/reportattendance/pdf','ReportController@export_pdfattendance');
 
 Route::get('profile', 'UserController@profile');
 Route::post('profile', 'UserController@update_avatar');

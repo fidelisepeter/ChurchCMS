@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Attendance;
 use App\Member;
 use App\Income;
-use PDF;
 
 class ReportController extends Controller
 {
@@ -22,20 +21,5 @@ class ReportController extends Controller
         $attendances = Attendance::all();
         return view('reportattendance')->with('attendances', $attendances);
     }
-    public function export_pdfmembers() {
-        $members = Member::all();
-        $pdf = PDF::make('members');
-        $pdf->loadView('reportmembers', $members);
-        return $pdf->download('members.pdf');
-    }
-    public function export_pdfincome() {
-        $incomes = Income::all();
-        $pdf = PDF::loadView('reportincome', $incomes);
-        return $pdf->download('income.pdf');
-    }
-    public function export_pdfattendance() {
-        $attendances = Attendance::all();
-        $pdf = PDF::loadView('reportattendance', $attendances);
-        return $pdf->download('attendance.pdf');
-    }
+    
 }
