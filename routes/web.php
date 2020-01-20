@@ -39,6 +39,7 @@ Route::get('importmembers', 'MembersController@importFile');
 Route::post('import', 'MembersController@importExcel');
 
 Route::post('/message', 'MessagingController@message');
+Route::post('/sendmail', 'SermonsController@sendmail');
 
 Route::resource('sermons', 'SermonsController');
 Route::resource('messaging', 'MessagingController');

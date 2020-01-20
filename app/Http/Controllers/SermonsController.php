@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Sermon;
+use App\Mail\WeeklySermon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 
@@ -29,17 +30,17 @@ class SermonsController extends Controller
         return view('sermons.index')->with('sermons', $sermons);
     }
     
-    public function sendmail($id)
+    public function sendmail()
     {
-        $sermon = Sermon::find($id);
+        $sermon = Sermon::find(1);
 
         Mail::raw($sermon, function($message) {
-            $emails = DB::table('members')->pluck('email');
-            $message->to($emails)
+            $email = DB::table('members')->pluck('email')->find(1);
+            $message->to($email)
             ->subject('Message for the week');
         });
-        
-        return redirect ('/sermons')->with('success', 'Emails broadcasted successfully');
+
+        return redirect ('/sermons')->with('success', 'Emails sent successfully');
     }
     /**
      * Show the form for creating a new resource.
@@ -74,6 +75,8 @@ class SermonsController extends Controller
         $sermon->save();
 
         return redirect('/sermons')->with('success', 'Note Created');
+
+        Mail::to('grandcleaningservicesltd@gmail.com')->send(new WeeklySermon);
     }
 
     /**

@@ -13,9 +13,10 @@
                 {!!Form::close()!!}
             @endif
         @endif
-        {!!Form::open(['action' => ['SermonsController@sendmail', $sermon->id], 'method' => 'POST'])!!}
+        {{-- {!!Form::open(['action' => 'SermonsController@sendmail', 'method' => 'POST'])!!}
             {{Form::submit('Send To Members via Mail', ['class' => 'btn btn-success'])}}
-        {!!Form::close()!!}
+        {!!Form::close()!!} --}}
+        {{-- <a href="/sermons/{{$sermon->id}}/edit" class="btn btn-success">Send To Members via Mail</a> --}}
         <br>
     </div>
     
