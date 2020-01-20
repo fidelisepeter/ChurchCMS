@@ -7,8 +7,20 @@
 </div>
 <div class="container">
     @if (count($incomes) > 0)
-    <table class="table table-striped table-light">
-        <thead class="thead-dark">
+    <div class="card shadow">
+        <div class="card-header border-0">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h3 class="mb-0">Income Report</h3>
+                </div>
+                <div class="col text-right">
+                </div>
+            </div>
+        </div>
+        <div class="table-responsive">
+        <div class="card-body">
+    <table class="table align-items-center table-hover">
+        <thead class="thead-light">
             <tr>
                 <th scope="col">Paid By</th>
                 <th scope="col">Income Type</th>
@@ -19,13 +31,13 @@
         </thead>
         @foreach($incomes as $income)
             <tr>
-                <td>{{ $income->paid_by }}</td>
-                <td>{{ $income->income_type }}</td>
-                <td>{{ $income->amount }}</td>
-                <td>{{ $income->transaction_type }}</td>
-                <td>{{ $income->date_received }}</td>
-                <td><a href="/income/{{$income->id}}/edit" class="btn btn-dark">Edit</a></td>
-                <td>
+                <td scope="row">{{ $income->paid_by }}</td>
+                <td scope="row">{{ $income->income_type }}</td>
+                <td scope="row">{{ $income->amount }}</td>
+                <td scope="row">{{ $income->transaction_type }}</td>
+                <td scope="row">{{ $income->date_received }}</td>
+                <td scope="row"><a href="/income/{{$income->id}}/edit" class="btn btn-dark">Edit</a></td>
+                <td scope="row">
                     {!!Form::open(['action' => ['IncomeController@destroy', $income->id], 'method' => 'POST'])!!}
                         {{Form::hidden('_method', 'DELETE')}}
                         {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
@@ -35,6 +47,9 @@
             </tr>
         @endforeach
     </table>
+        </div>
+        </div>
+    </div>
     @else
         <p>You have not recorded any income yet</p>
     @endif
