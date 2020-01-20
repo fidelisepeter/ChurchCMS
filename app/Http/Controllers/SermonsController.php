@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Sermon;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class SermonsController extends Controller
 {
@@ -26,7 +28,19 @@ class SermonsController extends Controller
         $sermons = Sermon::orderBy('created_at', 'desc')->paginate(7);
         return view('sermons.index')->with('sermons', $sermons);
     }
+    
+    public function sendmail($id)
+    {
+        $sermon = Sermon::find($id);
 
+        Mail::raw($sermon, function($message) {
+            $emails = DB::table('members')->pluck('email');
+            $message->to($emails)
+            ->subject('Message for the week');
+        });
+        
+        return redirect ('/sermons')->with('success', 'Emails broadcasted successfully');
+    }
     /**
      * Show the form for creating a new resource.
      *

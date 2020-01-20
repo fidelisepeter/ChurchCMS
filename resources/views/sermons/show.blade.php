@@ -13,6 +13,9 @@
                 {!!Form::close()!!}
             @endif
         @endif
+        {!!Form::open(['action' => ['SermonsController@sendmail', $sermon->id], 'method' => 'POST'])!!}
+            {{Form::submit('Send To Members via Mail', ['class' => 'btn btn-success'])}}
+        {!!Form::close()!!}
         <br>
     </div>
     
