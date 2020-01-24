@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use App\Member;
 use Excel;
 use App\Imports\MembersImport;
@@ -31,13 +30,8 @@ class MembersController extends Controller
         if ($request->has('q'))
             $q = $request->query('q');
 
-
-        $totalmembers = DB::table('members')->count();
         $members = Member::search($q)->orderBy($sortBy, $orderBy)->paginate($perPage);
-        return view('members.index', compact('members', 'totalmembers', 'orderBy', 'sortBy', 'q', 'perPage'));
-        
-        // $members = Member::all();
-        // return view('members.index')->with('members', $members);
+        return view('members.index', compact('members', 'orderBy', 'sortBy', 'q', 'perPage'));
     }
 
     /**

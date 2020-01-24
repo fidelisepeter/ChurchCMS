@@ -9,8 +9,7 @@
             {{Form::hidden('_method', 'DELETE')}}
             {{Form::submit('Delete Member', ['class' => 'btn btn-danger'])}}
         {!!Form::close()!!}&nbsp;&nbsp;
-        <a href="#" class="btn btn-success">Send SMS to {{ $member->name}}</a>
-        <br>
+        <a href="#" class="btn btn-success">Send SMS to {{ $member->name }}</a>
     </div>
 </div>
 <br><br>

@@ -15,7 +15,6 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/jquery.printPage.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" integrity="sha256-qM7QTJSlvtPSxVRjVWNM2OfTAz/3k5ovHOKmKXuYMO4=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.0/dist/tf.min.js"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
@@ -26,7 +25,6 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/argon.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/css/uikit.min.css" />
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.3/css/bootstrap-select.min.css">
 </head>
 
