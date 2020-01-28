@@ -13,6 +13,7 @@
         "cyber-duck/laravel-excel": "^1.2",
         "doctrine/dbal": "^2.10",
         "fideloper/proxy": "^4.0",
+        "guzzlehttp/guzzle": "^6.5",
         "intervention/image": "^2.5",
         "kylekatarnls/laravel-carbon-2": "^1.0.0",
         "laravel/framework": "5.6.*",

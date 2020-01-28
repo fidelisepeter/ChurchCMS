@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\SermonOfTheWeek;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\DB;
 use App\Sermon;
 
 class SermonsController extends Controller
@@ -61,6 +64,10 @@ class SermonsController extends Controller
         $sermon->save();
 
         return redirect('/sermons')->with('success', 'Note Created');
+
+        $members = DB::table('members')->pluck('email');
+
+        Mail::to($members)->send(new SermonOfTheWeek($sermon));
     }
 
     /**
